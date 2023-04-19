@@ -1,5 +1,6 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
 /*
 Theme Name: JDSP
 Author: Abdelhamid Boumegouas
@@ -282,7 +283,7 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   z-index: 9001;
   background-color: #010101;
   width: 350px;
-  left: 0;
+  right: 0;
   top: 0;
   bottom: 0;
   -webkit-transition: all 0.7s;
@@ -298,8 +299,8 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 .fixed-sidebar.hidden {
   -webkit-transition: all 0.7s;
   transition: all 0.7s;
-  -webkit-transform: translateX(-400px);
-          transform: translateX(-400px);
+  -webkit-transform: translateX(400px);
+          transform: translateX(400px);
 }
 
 .fixed-sidebar.showen {
@@ -327,11 +328,11 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 
 .fixed-sidebar .fixed-sidebar-content .fixed-sidebar-content-logo img {
   height: 40px;
-  margin-right: auto;
+  margin-left: auto;
 }
 
 .fixed-sidebar .fixed-sidebar-content .fixed-sidebar-content-logo .btn-close {
-  margin-left: auto;
+  margin-right: auto;
   color: #fff;
   background-color: #fff;
 }
@@ -390,7 +391,7 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   color: #fff;
   font-size: 14px;
   padding: 10px;
-  text-align: left;
+  text-align: right;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.541);
   border-bottom: 0;
@@ -418,7 +419,7 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 }
 
 .top-menu .top-menu-list {
-  margin-right: auto;
+  margin-left: auto;
 }
 
 .top-menu .top-menu-list ul {
@@ -471,7 +472,7 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 .top-menu .diwan-search {
   position: relative;
   width: 270px;
-  margin-left: auto;
+  margin-right: auto;
 }
 
 .top-menu .diwan-search input {
@@ -490,7 +491,7 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   position: absolute;
   background-color: transparent;
   color: #444;
-  right: 20px;
+  left: 20px;
   top: 10px;
   border: 0;
 }
@@ -507,7 +508,7 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 }
 
 .diwan-primary .diwan-primary-logo {
-  margin-right: auto;
+  margin-left: auto;
 }
 
 .diwan-primary .diwan-primary-logo img {
@@ -550,8 +551,8 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 .diwan-primary .primary-menu-list ul > li > a::after {
   position: absolute;
   content: "";
-  right: 100%;
-  left: 0;
+  left: 100%;
+  right: 0;
   bottom: 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -849,7 +850,7 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   background-color: transparent;
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.76);
-  margin-right: 7px;
+  margin-left: 7px;
 }
 
 .circular-btn.xs {
@@ -984,17 +985,17 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 }
 
 body {
-  direction: ltr;
-  font-family: 'Roboto Slab', serif;
+  direction: rtl;
+  font-family: 'Noto Naskh Arabic', serif;
   overflow-x: hidden;
 }
 
 h1, h2, h3 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Almarai', sans-serif;
 }
 
 .carousel-caption {
-  text-align: right;
+  text-align: left;
 }
 
 ::-moz-selection {
@@ -1011,7 +1012,7 @@ h1, h2, h3 {
   position: fixed;
   z-index: 9000;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
 }
 
 .fixed-whatsapp .lg {
@@ -1172,7 +1173,7 @@ h1, h2, h3 {
 }
 
 .najd-footer-bottom .najd-footer-bottom-inner .footer-socials {
-  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (max-width: 600px) {
@@ -1334,7 +1335,7 @@ h1, h2, h3 {
 
 .author-user .author-user-img {
   width: 70px;
-  padding-right: 7px;
+  padding-left: 7px;
 }
 
 .author-user .author-user-img img {
@@ -1363,15 +1364,15 @@ h1, h2, h3 {
 
 .snapep-single .meta-data li {
   padding: 1px 6px;
-  border-right: 1px solid #f1f1f1;
+  border-left: 1px solid #f1f1f1;
 }
 
 .snapep-single .meta-data li:first-child {
-  padding-left: 0;
+  padding-right: 0;
 }
 
 .snapep-single .meta-data li:last-child {
-  border-right: 0;
+  border-left: 0;
 }
 
 .single-content {
@@ -1394,4 +1395,4 @@ h1, h2, h3 {
 .snapep-single-content {
   padding: 30px 0;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style-rtl.css.map */

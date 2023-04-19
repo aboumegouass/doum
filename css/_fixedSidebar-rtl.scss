@@ -5,7 +5,7 @@
     z-index: 9001;
     background-color: #010101;
     width: 350px;
-    left: 0;
+    right: 0;
     top: 0;
     bottom: 0;
     transition: all 0.7s;
@@ -16,7 +16,7 @@
     } 
     &.hidden {
       transition: all 0.7s;
-      transform: translateX(-400px);
+      transform: translateX(400px);
     }
     &.showen {
       transition: all 0.7s;
@@ -33,10 +33,10 @@
         align-items: center;
         img {
           height: 40px;
-          margin-right: auto;
+          margin-left: auto;
         }
         .btn-close {
-          margin-left: auto;
+          margin-right: auto;
           color: #fff;
           background-color: #fff;
         }
@@ -88,7 +88,7 @@
           color: #fff;
           font-size: 14px;
           padding: 10px;
-          text-align: left;
+          text-align: right;
           text-decoration: none;
           border: 1px solid rgba(255, 255, 255, 0.541);
           border-bottom: 0;
