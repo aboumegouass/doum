@@ -284,8 +284,27 @@ h1, h2, h3 {
     height: 100%;
   }
 }
-.snapep-single {
-  padding: 60px 0; 
+.author-user {
+  display: flex;
+  align-items: center;
+  .author-user-img {
+    width: 70px;
+    padding-left: 7px;
+    img {
+      height: 65px;
+      width: 70px;
+      border-radius: 50%;
+    }
+  }
+  .author-user-body {
+    width: calc(100% - 70px);
+    .title {
+      font-size: 18px;
+      font-weight: 800;
+    }
+  }
+}
+.snapep-single { 
   .heading {
     font-weight: 800;
   }
@@ -312,4 +331,13 @@ h1, h2, h3 {
     line-height: 36px;
     color: #444;
   }
+}
+.snapep-single-thumbnail {
+  width: 100%;
+  background-size: cover;
+  height: 300px;
+  border-radius: 9px;
+}
+.snapep-single-content{
+  padding: 30px 0;
 }

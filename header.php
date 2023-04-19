@@ -43,9 +43,9 @@
             <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                 <label for="diwan-search-form-id">
                     <span
-                        class="screen-reader-text"><?php _e( 'البحث عن:', 'diwan' ); // phpcs:ignore: WordPress.Security.EscapeOutput.UnsafePrintingFunction -- core trusts translations ?></span>
+                        class="screen-reader-text"><?php __( 'البحث عن:', 'jdsp' ); // phpcs:ignore: WordPress.Security.EscapeOutput.UnsafePrintingFunction -- core trusts translations ?></span>
                     <input type="search" id="diwan-search-form-id" class="search-field"
-                        placeholder="<?php echo _( 'البحث في الموقع &hellip;' ); ?>"
+                        placeholder="<?php echo __( 'البحث في الموقع &hellip;', 'jdsp' ); ?>"
                         value="<?php echo get_search_query(); ?>" name="s" />
                 </label>
                 <button type="submit" class="btn-search"><span class="fa fa-search"></span></button>
@@ -55,9 +55,9 @@
         <ul class="diwan-socials">
             <li>
                 <?php if (is_rtl()) { ?>
-                <a href="" class="btn butt-sm butt-primary flex-center"><i class="fa fa-globe"></i> English</a>
+                <a href="/en" class="btn butt-sm butt-primary flex-center"><i class="fa fa-globe"></i> English</a>
                 <?php }else { ?>
-                <a href="" class="btn butt-sm butt-primary flex-center"><i class="fa fa-globe"></i> العربية</a>
+                <a href="ar" class="btn butt-sm butt-primary flex-center"><i class="fa fa-globe"></i> العربية</a>
                 <?php } ?>
             </li>
             <li class="social-item"><a href="" target="_blank"><i class="fab fa-facebook"></i></a></li>

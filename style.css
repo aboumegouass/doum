@@ -1324,8 +1324,33 @@ h1, h2, h3 {
   height: 100%;
 }
 
-.snapep-single {
-  padding: 60px 0;
+.author-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.author-user .author-user-img {
+  width: 70px;
+  padding-left: 7px;
+}
+
+.author-user .author-user-img img {
+  height: 65px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+.author-user .author-user-body {
+  width: calc(100% - 70px);
+}
+
+.author-user .author-user-body .title {
+  font-size: 18px;
+  font-weight: 800;
 }
 
 .snapep-single .heading {
@@ -1358,5 +1383,16 @@ h1, h2, h3 {
   font-size: 18px;
   line-height: 36px;
   color: #444;
+}
+
+.snapep-single-thumbnail {
+  width: 100%;
+  background-size: cover;
+  height: 300px;
+  border-radius: 9px;
+}
+
+.snapep-single-content {
+  padding: 30px 0;
 }
 /*# sourceMappingURL=style.css.map */

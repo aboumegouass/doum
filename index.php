@@ -4,7 +4,7 @@
         <div class="row py-4">
             <div class="col-lg-4">
                 <div class="diwan-hero-latest">
-                    <h2 class="title"><?php echo _( 'آخر المستجدات' ); ?></h2>
+                    <h2 class="title"><?php echo __( 'آخر المستجدات', 'jdsp' ); ?></h2>
                     <ul class="news-list">
                         <?php
                     $args = array(
@@ -67,7 +67,7 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="page-header">
-                <h2 class="title"><?php echo _( 'المنح' ); ?></h2>
+                <h2 class="title"><?php echo __( 'المنح', 'jdsp' ); ?></h2>
             </div>
             <div class="row">
                 <?php
@@ -98,7 +98,7 @@
         </div>
         <div class="col-lg-6">
             <div class="page-header">
-                <h2 class="title"><?php echo _( 'التظاهرات العلمية' ); ?></h2>
+                <h2 class="title"><?php echo __( 'التظاهرات العلمية', 'jdsp' ); ?></h2>
             </div>
             <div class="row">
                 <?php

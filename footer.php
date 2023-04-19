@@ -11,8 +11,8 @@
         <div class="row">
             <div class="col-xl-6">
                 <div class="najd-footer-about">
-                    <p class="about-text animatable bounceOut"><?php echo _('هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى'); ?>
+                    <p class="about-text animatable bounceOut"><?php echo __('هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى', 'jdsp'); ?>
                     </p>
                     <ul class="contact animatable bounceIn">
                         <li dir="ltr">
@@ -20,7 +20,7 @@
                         </li>
                         <li>
                             <a>
-                                <?php echo _('RG53+8J5, Route de l Aéroport, Tamanrasset'); ?>
+                                <?php echo __('RG53 + 8J5 ، طريق المطار ، تمنراست', 'jdsp'); ?>
                             </a>
                         </li>
                     </ul>
@@ -29,7 +29,7 @@
             <div class="col-xl-3 col-sm-6">
                 <div class="najd-footer-links">
                     <div class="najd-footer-header animatable bounceIn">
-                        <h3 class="title"><?php echo _('المعاهد والمراكز');?> </h3>
+                        <h3 class="title"><?php echo __('المعاهد والمراكز', 'jdsp');?> </h3>
                     </div>
                     <div class="links-item animatable bounceOut">
                         <?php 
@@ -79,7 +79,7 @@
                             class="fa-solid fa-mobile-screen"></i></a>
                 </li>
             </ul>
-            <p class="copyright animatable bounceIn">© <?php echo _( 'جميع الحقوق محفوظة لدى ' ); ?>
+            <p class="copyright animatable bounceIn">© <?php echo __( 'جميع الحقوق محفوظة لدى ', 'jdsp' ); ?>
                 <?php echo bloginfo('name'); ?></p>
         </div>
     </div>
