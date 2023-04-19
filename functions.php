@@ -13,6 +13,7 @@ function snapep_register_styles() {
 	wp_enqueue_style( 'flickitycss', get_template_directory_uri() . '/css/lightslider.min.css', array(), false );
 	wp_enqueue_style( 'gallery', get_template_directory_uri() . '/css/viewbox.css', array(), false );
 	wp_enqueue_style( 'snapep-style', get_stylesheet_uri(), array(), $theme_version );
+	wp_style_add_data( 'snapep-style', 'rtl', 'replace' );
 	wp_enqueue_script( 'jq', get_template_directory_uri() . '/js/jquery.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'btsjs', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'flickity', get_template_directory_uri() . '/js/lightslider.min.js', array( 'jquery' ), '1.0.0', true );
