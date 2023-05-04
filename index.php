@@ -95,6 +95,7 @@
                 <?php endwhile; else :
                     echo 'خطأ'; endif; wp_reset_postdata(); ?>
             </div>
+            <?php echo do_shortcode( '[contact_form]' ); ?>
         </div>
         <div class="col-lg-6">
             <div class="page-header">
@@ -126,6 +127,10 @@
                 <?php endwhile; else :
                     echo 'خطأ'; endif; wp_reset_postdata(); ?>
             </div>
+            <div class="page-header">
+                <h2 class="title"><?php echo __( 'فيديو مديرية الخدمات الجامعية', 'jdsp' ); ?></h2>
+            </div>
+            <?php dynamic_sidebar('aside-video'); ?>
         </div>
     </div>
 </div>

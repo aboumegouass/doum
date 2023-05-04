@@ -1395,4 +1395,121 @@ h1, h2, h3 {
 .snapep-single-content {
   padding: 30px 0;
 }
+
+/*
+----------------------------------------------------------------------------------------------------------
+    Contact Form
+----------------------------------------------------------------------------------------------------------
+*/
+.form-control-msg {
+  display: none;
+}
+
+.form-control-msg p {
+  font-size: 15px !important;
+  text-align: center !important;
+  margin: 0;
+}
+
+.has-error .form-control-msg {
+  display: inline-block;
+}
+
+.js-show-feedback {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.GH_contact_form {
+  position: relative;
+}
+
+.GH_contact_form input, .GH_contact_form textarea {
+  border-radius: 0;
+  outline: none;
+  font-size: 15px;
+}
+
+.GH_contact_form input:focus, .GH_contact_form textarea:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  -moz-box-shadow: none;
+  outline: none;
+  border: 1px solid #777;
+}
+
+.GH_contact_form label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.GH_contact_form textarea {
+  height: 200px;
+}
+
+.item-contact {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-contact .item-contact-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 9px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f2f2f2;
+}
+
+.item-contact .item-contact-body {
+  width: calc(100% - 50px);
+}
+
+.item-contact .item-contact-body .itm-tlt {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.item-contact .item-contact-body .text {
+  margin: 0;
+  font-weight: 800;
+  color: #444;
+}
+
+.item-contact .item-contact-body .text a {
+  color: #333;
+  text-decoration: none;
+}
+
+.item-contact .item-contact-body .text a:hover {
+  color: #db802a;
+  text-decoration: underline;
+}
+
+.widget_block {
+  list-style: none;
+  padding: 0;
+}
+
+.widget_block iframe {
+  width: 100%;
+  height: 300px;
+}
 /*# sourceMappingURL=style-rtl.css.map */
