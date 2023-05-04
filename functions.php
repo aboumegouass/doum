@@ -80,23 +80,38 @@ add_action( 'wp_enqueue_scripts', 'snapep_register_styles' );
   add_action( 'admin_menu', 'add_admin_page_callback' );
   // SNAPEP Callback snapep_options_callback
   function snapep_custom_settings() {
-    register_setting('snapep-settings-group', 'video');
-    register_setting('snapep-settings-group', 'urlimage');
-    add_settings_section( 'snapep-sidebar-option', 'روابط فيديو النقابة والبيان', 'snapep_sidebar_option', 'snapep_options' );
-    add_settings_field( 'snapep-video', 'كود فيديو النقابة هنا', 'snapep_video_callback', 'snapep_options', 'snapep-sidebar-option' );
-    add_settings_field( 'snapep-image-url', 'رابط البيان', 'snapep_imgurl_callback', 'snapep_options', 'snapep-sidebar-option' );
+    register_setting('snapep-settings-group', 'residencesCount');
+    register_setting('snapep-settings-group', 'carsCount');
+    register_setting('snapep-settings-group', 'carsEtudients');
+    register_setting('snapep-settings-group', 'borceEtudients');
+    add_settings_section( 'snapep-sidebar-option', null, 'snapep_sidebar_option', 'snapep_options' );
+    add_settings_field( 'residencesCount', __( 'عدد الطلبة المقيمين', 'diwan' ), 'residences_callback', 'snapep_options', 'snapep-sidebar-option' );
+    add_settings_field( 'carsCount', __( 'عدد الحافلات', 'diwan' ), 'cars_counts_callback', 'snapep_options', 'snapep-sidebar-option' );
+    add_settings_field( 'carsEtudients', __( 'عدد مشتركي النقل', 'diwan' ), 'cars_etudients_callback', 'snapep_options', 'snapep-sidebar-option' );
+    add_settings_field( 'borceEtudients', __( 'عدد الطلبة الممنوحين', 'diwan' ), 'bource_etudients_callback', 'snapep_options', 'snapep-sidebar-option' );
   }
   function snapep_options_callback() {
     require_once(get_template_directory() . '/admin/templates/general_options.php');
   }
-  function snapep_video_callback() {
-    $videoF = get_option('video');
-    echo '<input type="text" name="video" value="' . $videoF . '" placeholder="كود اليوتيوب">';
+  function residences_callback() {
+    $field1 = get_option('residencesCount');
+    $text1 = __( 'عدد الطلبة المقيمين', 'diwan' );
+    echo '<input type="text" name="residencesCount" value="' . $field1 . '" placeholder="' . $text1 . '">';
   }
-  function snapep_imgurl_callback() {
-    $urlimage = get_option('urlimage');
-    echo '<input type="text" name="urlimage" value="' . $urlimage . '" placeholder="رابط البيان">';
+  function cars_counts_callback() {
+    $field2 = get_option('carsCount');
+    $text2 = __( 'عدد الحافلات', 'diwan' );
+    echo '<input type="text" name="carsCount" value="' . $field2 . '" placeholder="' . $text2 . '">';
   }
+  function cars_etudients_callback() {
+    $field3 = get_option('carsEtudients');
+    echo '<input type="text" name="carsEtudients" value="' . $field3 . '" placeholder="' . __( 'عدد مشتركي النقل', 'diwan' ) . '">';
+  }
+  function bource_etudients_callback() {
+    $field3 = get_option('borceEtudients');
+    echo '<input type="text" name="borceEtudients" value="' . $field3 . '" placeholder="' . __( 'عدد الطلبة الممنوحين', 'diwan' ) . '">';
+  }
+
   function snapep_sidebar_option() {
     echo '<h1>SNAPEP</h1>';
     //require_once(get_template_directory() . '/admin/templates/snapep_sidebar_option.php');

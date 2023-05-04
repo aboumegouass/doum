@@ -134,4 +134,6 @@
         </div>
     </div>
 </div>
+
+<?php get_template_part( 'parts/events_numbers' ); ?>
 <?php get_footer(); ?>

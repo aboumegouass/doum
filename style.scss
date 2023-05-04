@@ -430,8 +430,16 @@ h1, h2, h3 {
     }
   }
 }
-
 .widget_block {
   list-style: none;
   padding: 0;
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+}
+.event-counts {
+  background-color: $primary;
+  padding: 70px 0;
+  text-align: center;
 }
