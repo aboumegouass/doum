@@ -37,24 +37,28 @@ function socials_shares() {
         ),
     );
         ?>
-    
-        <div class="socials-btns mb-3 d-flex <?php echo get_option('social_shape'); ?> <?php echo get_option('position_btns'); ?> ">
-            <p class="share-text me-auto"><i class="fa fa-share"></i> مشاركة الموضوع عبر مواقع التواصل الاجتماعي</p>
-            <ul class="GH-shares ml-auto nav">
+
+<div
+    class="flex justify-between max-sm:my-4 relative z-50 <?php echo get_option('social_shape'); ?> <?php echo get_option('position_btns'); ?> ">
+    <p class="share-text"><i class="fa fa-share"></i> <span class="max-sm:hidden max-sm:opacity-40">مشاركة الموضوع عبر
+            مواقع التواصل
+            الاجتماعي </span> </p>
+    <ul class="GH-shares nav">
         <?php
         foreach ($shares_button as $shares_btn) {
             if ($shares_btn['name'] !== '') { ?>
-                <li class="<?php echo $shares_btn['id']; ?>">
-                    <a class="circular-btn md bg-secondary" style="text-decoration: none" href="<?php echo $shares_btn['permalink']; ?>">
-                        <?=$shares_btn['icon']; ?>
-                    </a>
-                </li>
-                <?php
+        <li class="<?php echo $shares_btn['id']; ?>">
+            <a class="circular-btn md bg-secondary" style="text-decoration: none"
+                href="<?php echo $shares_btn['permalink']; ?>">
+                <?=$shares_btn['icon']; ?>
+            </a>
+        </li>
+        <?php
             }
         }
         ?>
-            </ul>
-        </div>
-    <?php
+    </ul>
+</div>
+<?php
 
 }

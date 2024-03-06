@@ -2,21 +2,24 @@
 
 <?php $bg = get_template_directory_uri() . '/img/footer.png'; ?>
 <div class="najd-footer">
+    <?php $whatsappNumber = get_option('whatsappNumber'); ?>
     <div class="fixed-whatsapp animatable bounceIn">
-        <a href="https://wa.me/+966504252545" class="circular-btn green lg">
+        <a href="https://wa.me/+<?php echo $whatsappNumber; ?>"
+            class="bg-green-600 flex items-center text-white text-2xl shadow-lg justify-center w-14 h-14 rounded-full">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-xl-6">
+            <div class="col-xl-3">
                 <div class="najd-footer-about">
-                    <p class="about-text animatable bounceOut"><?php echo __('هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+                    <p class="about-text animatable bounceOut">
+                        <?php echo __('هذا النص هو مثال لنص يمكن أن يستبدل في التطبيق.
 إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى', 'jdsp'); ?>
                     </p>
                     <ul class="contact animatable bounceIn">
                         <li dir="ltr">
-                            <a href="+966504252545">+(966)504252545</a>
+                            <a href="+21327882545">+(213)27882545</a>
                         </li>
                         <li>
                             <a>
@@ -29,7 +32,7 @@
             <div class="col-xl-3 col-sm-6">
                 <div class="najd-footer-links">
                     <div class="najd-footer-header animatable bounceIn">
-                        <h3 class="title"><?php echo __('المعاهد والمراكز', 'jdsp');?> </h3>
+                        <h3 class="title"><?php echo __('هيئات تحت الوصاية', 'jdsp');?> </h3>
                     </div>
                     <div class="links-item animatable bounceOut">
                         <?php 
@@ -44,12 +47,27 @@
             <div class="col-xl-3 col-sm-6">
                 <div class="najd-footer-links">
                     <div class="najd-footer-header animatable bounceIn">
-                        <h3 class="title"><?php echo _('روابط هامة');?> </h3>
+                        <h3 class="title"><?php echo _('روابط مديريات التربية');?> </h3>
                     </div>
                     <div class="links-item animatable bounceOut">
                         <?php 
                             $arg = array(
                                     'theme_location' => 'usinglinks'
+                                );
+                            wp_nav_menu($arg); 
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="najd-footer-links">
+                    <div class="najd-footer-header animatable bounceIn">
+                        <h3 class="title"><?php echo _('مواقع تهمك');?> </h3>
+                    </div>
+                    <div class="links-item animatable bounceOut">
+                        <?php 
+                            $arg = array(
+                                    'theme_location' => 'featuredwebsite'
                                 );
                             wp_nav_menu($arg); 
                         ?>
@@ -84,6 +102,9 @@
         </div>
     </div>
 </footer>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
 <?php wp_footer(); ?>
 </body>
 

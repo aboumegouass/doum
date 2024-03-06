@@ -252,22 +252,21 @@ $(document).ready(function () {
   });
 
   $(".fixed-sidebar-content-logo .btn-close").click(function () {
-    $(".fixed-sidebar").addClass('hidden');
-    $(".fixed-sidebar").removeClass('showen');
+    $(".fixed-sidebar").addClass("hidden");
+    $(".fixed-sidebar").removeClass("showen");
     $(".socials .search-bar").slideUp();
   });
 
   $(".togglenavbar").click(function () {
-    $(".fixed-sidebar").removeClass('hidden');
-    $(".fixed-sidebar").addClass('showen');
+    $(".fixed-sidebar").removeClass("hidden");
+    $(".fixed-sidebar").addClass("showen");
     $(".socials .search-bar").slideUp();
   });
   $(".search-toggle-btn").click(function () {
-    $(".fixed-sidebar").addClass('hidden');
-    $(".fixed-sidebar").removeClass('showen');
+    $(".fixed-sidebar").addClass("hidden");
+    $(".fixed-sidebar").removeClass("showen");
     $(".socials .search-bar").slideToggle();
   });
-  
 });
 var swiper2 = new Swiper(".mySwiper2", {
   slidesPerView: 3,
@@ -341,95 +340,76 @@ $(".moreless-button").click(function () {
   }
 });
 
-jQuery(function($) {
-  
+jQuery(function ($) {
   // Function which adds the 'animated' class to any '.animatable' in view
-  var doAnimations = function() {
-    
+  var doAnimations = function () {
     // Calc current offset and get all animatables
     var offset = $(window).scrollTop() + $(window).height(),
-        $animatables = $('.animatable');
-    
+      $animatables = $(".animatable");
+
     // Unbind scroll handler if we have no animatables
     if ($animatables.length == 0) {
-      $(window).off('scroll', doAnimations);
+      $(window).off("scroll", doAnimations);
     }
-    
+
     // Check all animatables and animate them if necessary
-		$animatables.each(function(i) {
-       var $animatable = $(this);
-			if (($animatable.offset().top + $animatable.height() - 20) < offset) {
-        $animatable.removeClass('animatable').addClass('animated');
-			}
+    $animatables.each(function (i) {
+      var $animatable = $(this);
+      if ($animatable.offset().top + $animatable.height() - 20 < offset) {
+        $animatable.removeClass("animatable").addClass("animated");
+      }
     });
+  };
 
-	};
-  
   // Hook doAnimations on scroll, and trigger a scroll
-	$(window).on('scroll', doAnimations);
-  $(window).trigger('scroll');
-
+  $(window).on("scroll", doAnimations);
+  $(window).trigger("scroll");
 });
-$(function() {
+$(function () {
   var header = $(".najd-navbar");
 
-  $(window).scroll(function() {    
-      var scroll = $(window).scrollTop();
-      if (scroll >= 50) {
-          header.addClass("scrolled");
-      } else {
-          header.removeClass("scrolled");
-      }
+  $(window).scroll(function () {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 50) {
+      header.addClass("scrolled");
+    } else {
+      header.removeClass("scrolled");
+    }
   });
+});
+$(document).ready(function () {
+  $(".demo").slick({
+    // prev arrow
+    prevArrow:
+      '<button type="button" data-role="none" class="slick-prev">Previous</button>',
+    // next arrow
+    nextArrow:
+      '<button type="button" data-role="none" class="slick-next">Next</button>',
+    autoplay: true,
 
-});
-$(function(){
-  $('.snapep-post-thumb').viewbox();
-});
-$(function(){
-  $('.item-post-carousel-1').viewbox();
-});
-$(function(){
-  $('.item-post-carousel-2').viewbox();
-});
-$(function(){
-  $('.item-post-carousel-3').viewbox();
-});
-$(function(){
-  $('.item-post-carousel-4').viewbox();
-});
-
-const myCarouselElement = document.querySelector('#carouselExampleCaptions')
-const carousel = new bootstrap.Carousel(myCarouselElement, {
-  interval: 2000,
-  wrap: false
-})
-
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 10,
-  autoplay: true,
-  freeMode: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  // Responsive breakpoints
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 12,
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 2,
-      spaceBetween: 12,
-    },
-    // when window width is >= 640px
-    840: {
-      slidesPerView: 4,
-      spaceBetween: 12,
-    },
-  },
+    // # of slides to show at a time
+    slidesToShow: 4,
+    centerMode: true,
+    centerPadding: "60px",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 300,
+        settings: "unslick", // destroys slick
+      },
+    ],
+  });
 });

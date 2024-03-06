@@ -11,14 +11,11 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 .slick-slider {
   position: relative;
   display: block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
@@ -30,11 +27,9 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   margin: 0;
   padding: 0;
 }
-
 .slick-list:focus {
   outline: none;
 }
-
 .slick-list.dragging {
   cursor: pointer;
   cursor: hand;
@@ -42,7 +37,6 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -54,16 +48,13 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   margin-left: auto;
   margin-right: auto;
 }
-
 .slick-track:before, .slick-track:after {
   content: "";
   display: table;
 }
-
 .slick-track:after {
   clear: both;
 }
-
 .slick-loading .slick-track {
   visibility: hidden;
 }
@@ -74,31 +65,24 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   min-height: 1px;
   display: none;
 }
-
-[dir="rtl"] .slick-slide {
+[dir=rtl] .slick-slide {
   float: right;
 }
-
 .slick-slide img {
   display: block;
 }
-
 .slick-slide.slick-loading img {
   display: none;
 }
-
 .slick-slide.dragging img {
   pointer-events: none;
 }
-
 .slick-initialized .slick-slide {
   display: block;
 }
-
 .slick-loading .slick-slide {
   visibility: hidden;
 }
-
 .slick-vertical .slick-slide {
   display: block;
   height: auto;
@@ -122,7 +106,6 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   font-weight: normal;
   font-style: normal;
 }
-
 /* Arrows */
 .slick-prev,
 .slick-next {
@@ -136,13 +119,11 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   background: transparent;
   color: transparent;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   padding: 0;
   border: none;
   outline: none;
 }
-
 .slick-prev:hover, .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus {
@@ -150,18 +131,15 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   background: transparent;
   color: transparent;
 }
-
 .slick-prev:hover:before, .slick-prev:focus:before,
 .slick-next:hover:before,
 .slick-next:focus:before {
   opacity: 1;
 }
-
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before {
   opacity: 0.25;
 }
-
 .slick-prev:before,
 .slick-next:before {
   font-family: "slick";
@@ -176,34 +154,28 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 .slick-prev {
   left: -25px;
 }
-
-[dir="rtl"] .slick-prev {
+[dir=rtl] .slick-prev {
   left: auto;
   right: -25px;
 }
-
 .slick-prev:before {
   content: "←";
 }
-
-[dir="rtl"] .slick-prev:before {
+[dir=rtl] .slick-prev:before {
   content: "→";
 }
 
 .slick-next {
   right: -25px;
 }
-
-[dir="rtl"] .slick-next {
+[dir=rtl] .slick-next {
   left: -25px;
   right: auto;
 }
-
 .slick-next:before {
   content: "→";
 }
-
-[dir="rtl"] .slick-next:before {
+[dir=rtl] .slick-next:before {
   content: "←";
 }
 
@@ -222,7 +194,6 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   margin: 0;
   width: 100%;
 }
-
 .slick-dots li {
   position: relative;
   display: inline-block;
@@ -232,7 +203,6 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   padding: 0;
   cursor: pointer;
 }
-
 .slick-dots li button {
   border: 0;
   background: transparent;
@@ -246,15 +216,12 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   padding: 5px;
   cursor: pointer;
 }
-
 .slick-dots li button:hover, .slick-dots li button:focus {
   outline: none;
 }
-
 .slick-dots li button:hover:before, .slick-dots li button:focus:before {
   opacity: 1;
 }
-
 .slick-dots li button:before {
   position: absolute;
   top: 0;
@@ -271,7 +238,6 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .slick-dots li.slick-active button:before {
   color: black;
   opacity: 0.75;
@@ -285,62 +251,44 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   left: 0;
   top: 0;
   bottom: 0;
-  -webkit-transition: all 0.7s;
   transition: all 0.7s;
   overflow: hidden;
   overflow-y: scroll;
 }
-
 .fixed-sidebar::-webkit-scrollbar {
   display: none;
 }
-
 .fixed-sidebar.hidden {
-  -webkit-transition: all 0.7s;
   transition: all 0.7s;
-  -webkit-transform: translateX(-400px);
-          transform: translateX(-400px);
+  transform: translateX(-400px);
 }
-
 .fixed-sidebar.showen {
-  -webkit-transition: all 0.7s;
   transition: all 0.7s;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
-
 .fixed-sidebar .fixed-sidebar-content {
   padding: 20px;
 }
-
 .fixed-sidebar .fixed-sidebar-content .fixed-sidebar-content-logo {
   border-bottom: 2px dotted rgba(255, 255, 255, 0.288);
   padding: 19px 0;
   margin-bottom: 9px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .fixed-sidebar .fixed-sidebar-content .fixed-sidebar-content-logo img {
   height: 40px;
   margin-right: auto;
 }
-
 .fixed-sidebar .fixed-sidebar-content .fixed-sidebar-content-logo .btn-close {
   margin-left: auto;
   color: #fff;
   background-color: #fff;
 }
-
 .fixed-sidebar .fixed-sidebar-content .fixed-sidebar-content-body {
   padding: 14px 0;
   text-align: center;
 }
-
 .fixed-sidebar .fixed-sidebar-content .fixed-sidebar-content-body .title-news {
   font-weight: bold;
   font-size: 21px;
@@ -349,7 +297,6 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   text-align: center;
   margin-bottom: 15px;
 }
-
 .fixed-sidebar .fixed-sidebar-content .fixed-sidebar-content-body .text-news {
   color: #fff;
   margin-bottom: 19px;
@@ -364,7 +311,6 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   border-bottom: 3px dotted rgba(255, 255, 255, 0.603);
   margin-bottom: 14px;
 }
-
 .sidebar-title .title {
   color: #fff;
   margin: 0;
@@ -375,16 +321,12 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 .primary-menu {
   padding: 10px 0;
 }
-
 .primary-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .primary-menu ul li a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   color: #fff;
@@ -394,98 +336,68 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.541);
   border-bottom: 0;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .primary-menu ul li a:hover {
   background-color: #fff;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   color: #010101;
 }
-
 .primary-menu ul li:last-child a {
   border-bottom: 1px solid rgba(255, 255, 255, 0.541);
 }
 
 .top-menu {
-  background-color: #db802a;
+  background-color: #20232e;
   padding: 10px 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .top-menu .top-menu-list {
   margin-right: auto;
 }
-
 .top-menu .top-menu-list ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
 .top-menu .top-menu-list ul li a {
   text-decoration: none;
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 7px 10px;
 }
-
 .top-menu .diwan-socials {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .top-menu .diwan-socials li.social-item a {
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-size: 21px;
   text-decoration: none;
   display: flex;
   padding: 6px 7px;
 }
-
 .top-menu .diwan-search {
   position: relative;
   width: 270px;
   margin-left: auto;
 }
-
 .top-menu .diwan-search input {
   padding: 10px 20px;
   border: 1px solid #f1f1f1;
   background-color: #fff;
   outline: none;
   font-weight: bold;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
-
 .top-menu .diwan-search .btn-search {
   position: absolute;
   background-color: transparent;
@@ -498,80 +410,55 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 .diwan-primary {
   background-color: #fff;
   padding: 10px 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .diwan-primary .diwan-primary-logo {
   margin-right: auto;
 }
-
 .diwan-primary .diwan-primary-logo img {
   height: 55px;
 }
-
 .diwan-primary .primary-menu-list ul {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 0;
   margin: 0;
 }
-
 .diwan-primary .primary-menu-list ul > li {
   position: relative;
 }
-
 .diwan-primary .primary-menu-list ul > li > a {
   color: #555;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   font-weight: bold;
   padding: 7px 10px;
   font-size: 17px;
   text-decoration: none;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
   position: relative;
 }
-
 .diwan-primary .primary-menu-list ul > li > a::after {
   position: absolute;
   content: "";
   right: 100%;
   left: 0;
   bottom: 0;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   height: 2px;
-  background-color: #db802a;
+  background-color: #20232e;
 }
-
 .diwan-primary .primary-menu-list ul > li > a:hover {
-  color: #db802a;
-  -webkit-transition: all 0.3s;
+  color: #20232e;
   transition: all 0.3s;
 }
-
 .diwan-primary .primary-menu-list ul > li > a:hover::after {
   left: 0;
   right: 0;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .diwan-primary .primary-menu-list ul > li > .sub-menu {
   list-style: none;
   display: none;
@@ -579,254 +466,204 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
   padding: 0;
   width: 200px;
   background-color: #fff;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: normal;
-      -ms-flex-align: normal;
-          align-items: normal;
+  flex-direction: column;
+  align-items: normal;
 }
-
 .diwan-primary .primary-menu-list ul > li > .sub-menu li a {
   font-size: 14px;
 }
-
 .diwan-primary .primary-menu-list ul > li > .sub-menu li a::after {
   opacity: 0;
 }
-
 .diwan-primary .primary-menu-list ul > li > .sub-menu li a:hover {
   color: #000;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-
 .diwan-primary .primary-menu-list ul > li:hover > .sub-menu {
   display: block;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-
 .diwan-primary .primary-menu-list ul > li.current-menu-item a {
   font-weight: bold;
-  color: #db802a;
+  color: #20232e;
 }
-
 .diwan-primary .primary-menu-list ul > li.current-menu-item a::after {
   left: 0;
   right: 0;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .btn {
   border-radius: 10px !important;
   outline: none !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
   border-style: solid;
   font-weight: 600;
 }
-
 .btn:focus {
   outline: none !important;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
 }
-
 .btn.butt-sm {
   padding: 5px 12px;
   font-size: 12px;
   border-width: 1px;
 }
-
 .btn.butt-xs {
   padding: 3px 10px;
   font-size: 11px;
   border-width: 1px;
 }
-
 .btn.butt-xl {
   padding: 12px 25px;
   font-size: 17px;
   border-width: 3px;
 }
-
 .btn.butt-dark {
   color: #fff;
   background-color: #222;
   border-color: #222;
 }
-
 .btn.butt-dark:hover {
   background-color: #363636;
   border-color: #363636;
   color: #fff;
 }
-
 .btn.butt-dark:focus {
   background-color: #181818;
   border-color: #181818;
   color: #fff;
 }
-
 .btn.butt-light {
   color: #222;
   background-color: #f7f7f7;
   border-color: #f7f7f7;
 }
-
 .btn.butt-light:hover {
   color: #2c2c2c;
   background-color: white;
   border-color: white;
 }
-
 .btn.butt-light:focus {
   color: #181818;
   background-color: #ededed;
   border-color: #ededed;
 }
-
 .btn.butt-light-out {
   color: #f1f1f1;
   background-color: transparent;
   border-color: #f7f7f7;
 }
-
 .btn.butt-light-out:hover {
   color: #2c2c2c;
   background-color: white;
   border-color: white;
 }
-
 .btn.butt-light-out:focus {
   color: #181818;
   background-color: #ededed;
   border-color: #ededed;
 }
-
 .btn.butt-primary {
   color: #fff;
-  background-color: #db802a;
-  border-color: #db802a;
+  background-color: #20232e;
+  border-color: #20232e;
 }
-
 .btn.butt-primary:hover {
   color: #fff;
-  background-color: #e1954d;
-  border-color: #e1954d;
+  background-color: #313546;
+  border-color: #313546;
 }
-
 .btn.butt-primary:focus {
   color: #fff;
-  background-color: #ce7623;
-  border-color: #ce7623;
+  background-color: #181a22;
+  border-color: #181a22;
 }
-
 .btn.butt-primary2 {
   color: #000;
   background-color: #2d629e;
   border-color: #2d629e;
 }
-
 .btn.butt-primary2:hover {
   color: #0a0a0a;
   background-color: #3676be;
   border-color: #3676be;
 }
-
 .btn.butt-primary2:focus {
   color: black;
   background-color: #28588e;
   border-color: #28588e;
 }
-
 .btn.butt-primary2-out {
   color: #2d629e;
   background-color: transparent;
   border-color: #2d629e;
 }
-
 .btn.butt-primary2-out:hover {
   color: #0a0a0a;
   background-color: #3676be;
   border-color: #3676be;
 }
-
 .btn.butt-primary2-out:focus {
   color: black;
   background-color: #28588e;
   border-color: #28588e;
 }
-
 .btn.butt-primary3 {
   color: #fff;
-  background-color: #d65215;
-  border-color: #d65215;
+  background-color: #352141;
+  border-color: #352141;
 }
-
 .btn.butt-primary3:hover {
   color: #fff;
-  background-color: #ea672a;
-  border-color: #ea672a;
+  background-color: #4b2f5c;
+  border-color: #4b2f5c;
 }
-
 .btn.butt-primary3:focus {
   color: #fff;
-  background-color: #c34b13;
-  border-color: #c34b13;
+  background-color: #2a1a33;
+  border-color: #2a1a33;
 }
-
 .btn.butt-red {
-  color: white;
+  color: rgb(255, 255, 255);
   background-color: #c92121;
   border-color: #c92121;
 }
-
 .btn.butt-red:hover {
   color: #fff;
   background-color: #de3535;
   border-color: #de3535;
 }
-
 .btn.butt-red:focus {
   color: whitesmoke;
   background-color: #b71e1e;
   border-color: #b71e1e;
 }
-
 .btn.butt-blue {
-  color: white;
-  background-color: #3579df;
-  border-color: #3579df;
+  color: rgb(255, 255, 255);
+  background-color: rgb(53, 121, 223);
+  border-color: rgb(53, 121, 223);
 }
-
 .btn.butt-blue:hover {
   color: #fff;
   background-color: #5890e5;
   border-color: #5890e5;
 }
-
 .btn.butt-blue:focus {
   color: whitesmoke;
   background-color: #236ddc;
   border-color: #236ddc;
 }
-
 .btn.butt-theal {
-  color: white;
+  color: rgb(255, 255, 255);
   background-color: #0ca6b7;
   border-color: #0ca6b7;
 }
-
 .btn.butt-theal:hover {
   color: #fff;
   background-color: #0fc9dd;
   border-color: #0fc9dd;
 }
-
 .btn.butt-theal:focus {
   color: whitesmoke;
   background-color: #0b95a4;
@@ -834,70 +671,52 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 }
 
 .circular-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   border: 0;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   background-color: transparent;
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.76);
   margin-right: 7px;
 }
-
 .circular-btn.xs {
   width: 20px;
   height: 20px;
 }
-
 .circular-btn.xs .material-icons {
   font-size: 15px;
 }
-
 .circular-btn.xs2 {
   width: 24px;
   height: 24px;
   font-size: 11px !important;
 }
-
 .circular-btn.xs2 .material-icons {
   font-size: 14px;
 }
-
 .circular-btn.sm {
   width: 30px;
   height: 30px;
 }
-
 .circular-btn.sm .material-icons {
   font-size: 17px;
 }
-
 .circular-btn.sm2 {
   width: 35px;
   height: 35px;
 }
-
 .circular-btn.sm2 .material-icons {
   font-size: 19px;
 }
-
 .circular-btn.md {
   width: 40px;
   height: 40px;
 }
-
 .circular-btn.md .material-icons {
   font-size: 19px;
 }
-
 @media (max-width: 600px) {
   .circular-btn.md {
     width: 30px;
@@ -905,79 +724,63 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
     font-size: 14px;
   }
 }
-
 .circular-btn.mdtext {
   font-size: 23px;
   width: 35px;
   height: 35px;
 }
-
 .circular-btn.lg {
   width: 55px;
   height: 55px;
 }
-
 .circular-btn.lg .material-icons {
   font-size: 21px;
 }
-
 .circular-btn.xl {
   width: 75px;
   height: 75px;
   font-size: 33px;
 }
-
 .circular-btn.xl .material-icons {
   font-size: 23px;
 }
-
 .circular-btn:hover {
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   background-color: rgba(255, 255, 255, 0.425);
   color: #fff;
 }
-
 .circular-btn.primary2 {
   background-color: #2d629e;
   color: #fff;
 }
-
 .circular-btn.white {
   background-color: rgba(255, 255, 255, 0.705);
   color: #111;
 }
-
 .circular-btn.gray {
   background-color: #f3f3f3;
   color: #444;
 }
-
 .circular-btn.red {
   background-color: #fce8e8;
-  color: #ad1b1b;
+  color: rgb(173, 27, 27);
 }
-
 .circular-btn.green {
   background-color: #f0fff5;
-  color: #1bad69;
+  color: rgb(27, 173, 105);
 }
-
 .circular-btn.green2 {
   background-color: #0d7a31;
-  color: #f8fcfa;
+  color: rgb(248, 252, 250);
 }
-
 .circular-btn.primary {
-  background-color: #db802a;
-  color: white;
+  background-color: #20232e;
+  color: rgb(255, 255, 255);
 }
-
 .circular-btn.primarylight {
-  background-color: white;
+  background-color: #c4c8d6;
   color: rgba(0, 0, 0, 0.822);
 }
-
 .circular-btn.transparent {
   background-color: transparent;
   color: #000;
@@ -985,12 +788,12 @@ Tags: blog, organization, fareza, karim-mhamdi, jdsp, magazine, school
 
 body {
   direction: ltr;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   overflow-x: hidden;
 }
 
 h1, h2, h3 {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 }
 
 .carousel-caption {
@@ -999,12 +802,12 @@ h1, h2, h3 {
 
 ::-moz-selection {
   color: #101010;
-  background: rgba(219, 128, 42, 0.6);
+  background: rgba(32, 35, 46, 0.6);
 }
 
 ::selection {
   color: #101010;
-  background: rgba(219, 128, 42, 0.6);
+  background: rgba(32, 35, 46, 0.6);
 }
 
 .fixed-whatsapp {
@@ -1013,7 +816,6 @@ h1, h2, h3 {
   bottom: 20px;
   left: 20px;
 }
-
 .fixed-whatsapp .lg {
   text-decoration: none;
   font-size: 25px;
@@ -1029,96 +831,76 @@ h1, h2, h3 {
   background-color: #111;
   background-repeat: repeat;
 }
-
 .najd-footer .instagram-img {
   height: 80px;
   margin: 2px;
 }
-
 @media (max-width: 600px) {
   .najd-footer .instagram-img {
     height: 130px;
     margin-bottom: 10px;
   }
 }
-
 .najd-footer .najd-footer-header {
   padding: 16px 0;
   margin: 9px;
 }
-
 .najd-footer .najd-footer-header .title {
   font-size: 20px;
   color: #fff;
   font-weight: bold;
   margin: 0;
 }
-
 .najd-footer .najd-footer-links {
   list-style: none;
 }
-
 .najd-footer .najd-footer-links li {
   color: #fff;
 }
-
 .najd-footer .najd-footer-links li a {
   font-size: 13px;
   color: #fff;
   text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 6px 0;
 }
-
 .najd-footer .najd-footer-links li a:hover {
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   color: #2d629e;
 }
-
 .najd-footer .najd-footer-about .logo-footer {
   text-decoration: none;
   display: block;
   margin-bottom: 9px;
 }
-
 .najd-footer .najd-footer-about .logo-footer img {
   height: 45px;
 }
-
 .najd-footer .najd-footer-about .about-text {
   color: #fff;
   font-size: 14px;
   line-height: 27px;
   margin: 15px 0;
 }
-
 .najd-footer .najd-footer-about .contact {
   list-style: none;
   margin: 0;
   margin-top: 15px;
 }
-
 .najd-footer .najd-footer-about .contact li a {
   font-size: 12px;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
 }
-
 .najd-footer .najd-footer-about .contact li a:hover {
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   color: #2d629e;
 }
 
 .najd-footer-links img {
-  -webkit-animation: logoAnimate 4.2s;
-          animation: logoAnimate 4.2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation: logoAnimate 4.2s;
+  animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
 }
 
@@ -1127,28 +909,16 @@ h1, h2, h3 {
   padding: 10px 0;
   background-size: cover;
 }
-
 .najd-footer-bottom .najd-footer-bottom-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 @media (max-width: 600px) {
   .najd-footer-bottom .najd-footer-bottom-inner {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    justify-content: center;
   }
 }
-
 .najd-footer-bottom .najd-footer-bottom-inner .copyright {
   margin: 0;
   color: #fff;
@@ -1157,34 +927,27 @@ h1, h2, h3 {
   font-weight: 500;
   color: rgba(0, 0, 0, 0.774);
 }
-
 @media (max-width: 600px) {
   .najd-footer-bottom .najd-footer-bottom-inner .copyright {
     text-align: center;
   }
 }
-
 .najd-footer-bottom .najd-footer-bottom-inner .copyright a {
   font-size: 13px;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
 }
-
 .najd-footer-bottom .najd-footer-bottom-inner .footer-socials {
   margin-right: auto;
 }
-
 @media (max-width: 600px) {
   .najd-footer-bottom .najd-footer-bottom-inner .footer-socials.nav {
     margin: 0;
     margin-top: 10px;
-    -webkit-box-pack: center !important;
-        -ms-flex-pack: center !important;
-            justify-content: center !important;
+    justify-content: center !important;
   }
 }
-
 .najd-footer-bottom .najd-footer-bottom-inner .footer-socials li a {
   text-decoration: none;
   margin: 0 2px;
@@ -1194,7 +957,6 @@ h1, h2, h3 {
   background-color: #333;
   padding: 40px 0;
 }
-
 .diwan-title-main .title {
   font-weight: bold;
   color: #fff;
@@ -1204,27 +966,22 @@ h1, h2, h3 {
 .diwan-hero .diwan-hero-latest {
   padding: 15px 0;
 }
-
 .diwan-hero .diwan-hero-latest .title {
   font-weight: bold;
   font-size: 27px;
   margin-bottom: 20px;
 }
-
 .diwan-hero .diwan-hero-latest .news-list li a {
   color: #222;
   font-size: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 7px 0;
   text-decoration: none;
   margin-bottom: 1px;
 }
-
 .diwan-hero .diwan-hero-latest .news-list li a:hover {
   text-decoration: underline;
-  color: #db802a;
+  color: #20232e;
 }
 
 .post-item {
@@ -1233,79 +990,60 @@ h1, h2, h3 {
   height: 200px;
   display: block;
   text-decoration: none;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   margin-bottom: 9px;
 }
-
 .post-item .post-item-img {
   background-size: cover;
   position: absolute;
   left: 0;
   right: 0;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   bottom: 0;
   top: 0;
   z-index: 10;
 }
-
 .post-item .post-item-content {
   position: absolute;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
-  background-color: #00000096;
+  background-color: rgba(0, 0, 0, 0.5882352941);
   z-index: 20;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   padding-bottom: 20px;
 }
-
 .post-item .post-item-content .post-item-content-inner {
   text-align: center;
 }
-
 .post-item .post-item-content .title, .post-item .post-item-content .meta {
   color: #fff;
   margin: 0;
 }
-
 .post-item .post-item-content .title {
   font-size: 19px;
   font-weight: bold;
 }
-
 .post-item:hover {
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .post-item:hover .post-item-content {
   padding-bottom: 0;
-  background-color: #000000c4;
-  -webkit-transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0.768627451);
   transition: all 0.3s;
 }
 
 .page-header {
-  border-bottom: 3px solid #db802a;
+  border-bottom: 3px solid #20232e;
   margin-bottom: 10px;
 }
-
 .page-header .title {
   padding: 10px 25px;
-  background-color: #db802a;
+  background-color: #20232e;
   color: #fff;
   font-weight: bold;
   margin: 0;
@@ -1318,35 +1056,26 @@ h1, h2, h3 {
   border-radius: 8px;
   background-size: cover;
 }
-
 .carousel-item img {
   height: 100%;
 }
 
 .author-user {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .author-user .author-user-img {
   width: 70px;
   padding-right: 7px;
 }
-
 .author-user .author-user-img img {
   height: 65px;
   width: 70px;
   border-radius: 50%;
 }
-
 .author-user .author-user-body {
   width: calc(100% - 70px);
 }
-
 .author-user .author-user-body .title {
   font-size: 18px;
   font-weight: 800;
@@ -1355,21 +1084,17 @@ h1, h2, h3 {
 .snapep-single .heading {
   font-weight: 800;
 }
-
 .snapep-single .meta-data {
   color: #666;
   font-weight: 300;
 }
-
 .snapep-single .meta-data li {
   padding: 1px 6px;
   border-right: 1px solid #f1f1f1;
 }
-
 .snapep-single .meta-data li:first-child {
   padding-left: 0;
 }
-
 .snapep-single .meta-data li:last-child {
   border-right: 0;
 }
@@ -1377,7 +1102,6 @@ h1, h2, h3 {
 .single-content {
   margin-top: 15px;
 }
-
 .single-content p {
   font-size: 18px;
   line-height: 36px;
@@ -1451,54 +1175,38 @@ h1, h2, h3 {
 
 .item-contact {
   padding: 10px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .item-contact .item-contact-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-left: 9px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   background-color: #f2f2f2;
 }
-
 .item-contact .item-contact-body {
   width: calc(100% - 50px);
 }
-
 .item-contact .item-contact-body .itm-tlt {
   font-size: 15px;
   font-weight: 400;
   margin: 0;
 }
-
 .item-contact .item-contact-body .text {
   margin: 0;
   font-weight: 800;
   color: #444;
 }
-
 .item-contact .item-contact-body .text a {
   color: #333;
   text-decoration: none;
 }
-
 .item-contact .item-contact-body .text a:hover {
-  color: #db802a;
+  color: #20232e;
   text-decoration: underline;
 }
 
@@ -1506,15 +1214,13 @@ h1, h2, h3 {
   list-style: none;
   padding: 0;
 }
-
 .widget_block iframe {
   width: 100%;
   height: 300px;
 }
 
 .event-counts {
-  background-color: #db802a;
+  background-color: #20232e;
   padding: 70px 0;
   text-align: center;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
