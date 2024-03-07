@@ -1329,4 +1329,32 @@ body {
   line-height: 31px;
   font-size: 18px;
   margin-block: 12px;
+}
+
+.ticker-wrap .ticker {
+  display: inline-block;
+  height: 4rem;
+  line-height: 4rem;
+  white-space: nowrap;
+  padding-right: 100%;
+  box-sizing: content-box;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ticker;
+  animation-duration: 50s;
+}
+.ticker-wrap .ticker__item {
+  display: inline-block;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+@keyframes ticker {
+  100% {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
 }/*# sourceMappingURL=style-rtl.css.map */

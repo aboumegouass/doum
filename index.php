@@ -72,45 +72,76 @@
                 </div>
             </div>
             <div class="w-2/3 max-sm:w-full">
-                <div class="relative">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
+                <div class="hero-slider mb-6 mt-4" dir="ltr" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+                    <?php
+    $args = array(
+        'posts_per_page' => 8,
+        'order' => 'DESC'
+    );
+    $eyemich = new WP_Query($args);
+    if ($eyemich->have_posts()) :
+        while ($eyemich->have_posts()) : $eyemich->the_post();
+        $url = get_the_post_thumbnail_url();
+?>
+                    <div dir="rtl" class="bg-black/30 h-72 overflow-hidden rounded-lg shadow-md">
+                        <a href="<?php the_permalink(); ?>">
+                            <img class="inset-0 w-full h-36 object-cover object-center md:object-center"
+                                src="<?php echo $url; ?>" alt="<?php the_title(); ?>">
+                        </a>
+                        <div class="p-3">
+                            <h3
+                                class="font-extrabold text-sm opacity-70 transition-all hover:opacity-100 hover:text-white text-white">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h3>
                         </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active"
-                                style="background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg')">
-                            </div>
-                            <div class="carousel-item"
-                                style="background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg')">
-
-                            </div>
-                            <div class="carousel-item"
-                                style="background-image: url('https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80')">
-
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
+                    <?php endwhile; else :
+        echo 'خطأ'; endif; wp_reset_postdata(); ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="container">
+
+    <div class="mb-2 pb-4 border-b border-b-slate-200">
+        <h3 class="text-2xl font-extrabold">آخر الأخبار</h3>
+    </div>
+    <div class="hero-carousel mb-6 mt-4" dir="ltr" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        <?php
+    $args = array(
+        'posts_per_page' => 8,
+        'order' => 'DESC'
+    );
+    $eyemich = new WP_Query($args);
+    if ($eyemich->have_posts()) :
+        while ($eyemich->have_posts()) : $eyemich->the_post();
+        $url = get_the_post_thumbnail_url();
+?>
+        <div dir="rtl" class="bg-white h-96 overflow-hidden rounded-lg shadow-md">
+            <a href="<?php the_permalink(); ?>">
+                <img class="inset-0 w-full h-44 object-cover object-center md:object-center" src="<?php echo $url; ?>"
+                    alt="<?php the_title(); ?>">
+            </a>
+            <div class="p-3">
+                <h3 class="font-extrabold mb-3">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </h3>
+                <p>
+                    <?php 
+            $excerpt = get_the_excerpt(); 
+            $excerpt = substr( $excerpt, 0, 280 ); // Only display first 260 characters of excerpt
+            $result = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
+            echo $result . " ...";
+            ?>
+                </p>
+            </div>
+        </div>
+        <?php endwhile; else :
+        echo 'خطأ'; endif; wp_reset_postdata(); ?>
+    </div>
+</div>
+
 <div class="container-xl">
     <div class="row">
         <div class="col-lg-6">
@@ -187,7 +218,7 @@
                 <h2 class="title"><?php echo __( 'فيديو النقابة', 'jdsp' ); ?></h2>
             </div>
             <?php $videoLink = get_option('videoLink'); ?>
-            <iframe class="w-full rounded-md h-64 mb-6" src="https://www.youtube.com/embed/PHbZ9SXHJwA"
+            <iframe class="w-full rounded-md h-64 mb-6" src="https://www.youtube.com/embed/<?php echo $videoLink; ?>"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
@@ -246,7 +277,7 @@
     </div>
 
 
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <!-- <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
                 <div class="flex flex-col-reverse">
@@ -267,6 +298,6 @@
                 </div>
             </dl>
         </div>
-    </div>
+    </div> -->
 </div>
 <?php get_footer(); ?>
