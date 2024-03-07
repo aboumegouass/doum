@@ -524,3 +524,17 @@ body {
 .slick-slide  {
   margin-inline: 10px;
 }
+.has-large-font-size {
+  margin-block: 20px;
+}
+.single-content {
+  ol {
+    margin-block: 13px;
+    li {
+      line-height: 27px;
+      font-size: 17px;
+      margin-block: 12px;
+      
+    }
+  }
+}
