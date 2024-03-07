@@ -1322,9 +1322,11 @@ body {
 
 .single-content ol {
   margin-block: 13px;
+  padding-right: 30px;
+  list-style: circle;
 }
 .single-content ol li {
-  line-height: 27px;
-  font-size: 17px;
+  line-height: 31px;
+  font-size: 18px;
   margin-block: 12px;
 }/*# sourceMappingURL=style-rtl.css.map */

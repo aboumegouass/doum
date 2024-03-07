@@ -530,11 +530,13 @@ body {
 .single-content {
   ol {
     margin-block: 13px;
+    padding-right: 30px;
+    list-style: circle;
     li {
-      line-height: 27px;
-      font-size: 17px;
+      line-height: 31px;
+      font-size: 18px;
       margin-block: 12px;
-      
+
     }
   }
 }
