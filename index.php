@@ -18,7 +18,7 @@
                             </radialGradient>
                         </defs>
                     </svg>
-                    <div
+                    <div x-data="{ open: false }"
                         class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-8 lg:text-left rtl:lg:text-right">
                         <div class="flex flex-col justify-center items-center">
                             <img class="w-20 h-20 border-2 border-white shadow-lg rounded-full "
@@ -29,7 +29,13 @@
                             <h2 class="text-lg font-normal m-0 tracking-tight text-white sm:text-lg">حميدات محمد
                             </h2>
                         </div>
-                        <p class="mt-6 text-lg leading-8 text-gray-300"><?php echo $ecretaryGeneral; ?></p>
+                        <p class="mt-6 text-lg leading-8 text-gray-300">
+                            <?php 
+                        $excerpt2 = substr( $ecretaryGeneral, 0, 320 ); // Only display first 260 characters of excerpt
+                        $result2 = substr( $ecretaryGeneral, 0, strrpos( $ecretaryGeneral, ' ' ) );
+                        echo $result2 . " ...";
+                        ?>
+                        </p>
                         <?php 
                             $link1 = get_option('ecretaryIst'); 
                             $link2 = get_option('ecretaryTw'); 
@@ -38,9 +44,9 @@
                         ?>
                         <div
                             class="mt-10 flex max-sm:flex-col max-sm:justify-center max-sm:gap-3 items-center justify-between gap-x-6 lg:justify-between">
-                            <a href="#"
+                            <button @click="open = true"
                                 class="rounded-md max-sm:w-full bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">إقرأ
-                                المزيد...</a>
+                                المزيد...</button>
                             <div class="flex gap-2 items-center">
                                 <?php if ($link3 !==  '' || !empty($link3)) { ?>
                                 <a href="<?php echo $link3; ?>" target="_blank"
@@ -66,6 +72,15 @@
                                     <i class="fab fa-instagram"></i>
                                 </a>
                                 <?php } ?>
+                            </div>
+                        </div>
+                        <div x-show="open"
+                            class="fixed flex items-center justify-center left-0 right-0 top-0 bottom-0 z-50 bg-black/20">
+                            <div class="bg-white relative p-4 rounded-lg shadow-lg w-96 max-sm:w-full">
+                                <button @click="open = false" class="absolute top-3 left-3">
+                                    <i class="fa fa-close"></i>
+                                </button>
+                                <?php echo $ecretaryGeneral; ?>
                             </div>
                         </div>
                     </div>

@@ -1349,6 +1349,11 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
 }
+@media (max-width: 680px) {
+  .ticker-wrap .ticker__item {
+    font-size: 1rem;
+  }
+}
 @keyframes ticker {
   100% {
     transform: translate3d(0, 0, 0);

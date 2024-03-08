@@ -207,10 +207,15 @@
     <div class="container">
         <div class="flex items-center">
             <div
-                class="bg-slate-900/30 font-bold rounded-s-lg flex items-center justify-center h-14 overflow-hidden w-36">
-                آخر الأخبار
+                class="bg-slate-900/30 font-bold rounded-s-lg flex items-center justify-center h-14 max-sm:h-10 overflow-hidden w-36 max-sm:w-16">
+                <span class="max-sm:hidden">
+                    شريط العاجل
+                </span>
+                <span class="hidden max-sm:flex">
+                    <i class="fa fa-rss"></i>
+                </span>
             </div>
-            <div class="ticker-wrap flex items-center h-14 overflow-hidden w-[calc(100%-144px)] bg-white/60 border border-slate-900/50 shadow-lg rounded-s-lg relative isolate"
+            <div class="ticker-wrap flex items-center h-14 max-sm:h-10 overflow-hidden w-[calc(100%-144px)] max-sm:w-[calc(100%-64px)] bg-white/60 border border-slate-900/50 shadow-lg rounded-s-lg relative isolate"
                 dir="ltr">
                 <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                     aria-hidden="true">
