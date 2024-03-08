@@ -32,8 +32,8 @@
                         <p class="mt-6 text-lg leading-8 text-gray-300">
                             <?php 
                         $excerpt2 = substr( $ecretaryGeneral, 0, 320 ); // Only display first 260 characters of excerpt
-                        $result2 = substr( $ecretaryGeneral, 0, strrpos( $ecretaryGeneral, ' ' ) );
-                        echo $result2 . " ...";
+                        $result2 = substr( $excerpt2, 0, strrpos( $ecretaryGeneral, ' ' ) );
+                        echo $excerpt2 . " ...";
                         ?>
                         </p>
                         <?php 
@@ -76,8 +76,10 @@
                         </div>
                         <div x-show="open"
                             class="fixed flex items-center justify-center left-0 right-0 top-0 bottom-0 z-50 bg-black/20">
-                            <div class="bg-white relative p-4 rounded-lg shadow-lg w-96 max-sm:w-full">
-                                <button @click="open = false" class="absolute top-3 left-3">
+                            <div @click.outside="open = false"
+                                class="bg-white overflow-y-scroll h-96 relative p-4 rounded-lg shadow-lg w-96 max-sm:w-full">
+                                <button @click="open = false"
+                                    class="fixed z-50 h-8 w-8 flex items-center rounded-full text-xl justify-center bg-black/20 top-3 left-3">
                                     <i class="fa fa-close"></i>
                                 </button>
                                 <?php echo $ecretaryGeneral; ?>
