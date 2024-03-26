@@ -120,9 +120,8 @@
     </div>
 </div>
 <div class="container">
-
     <div class="mb-2 pb-4 border-b border-b-slate-200">
-        <h3 class="text-2xl font-extrabold">آخر الأخبار</h3>
+        <h3 class="text-2xl font-extrabold">تعازي</h3>
     </div>
     <div class="hero-carousel mb-6 mt-4" dir="ltr" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
         <?php
@@ -135,7 +134,7 @@
         while ($eyemich->have_posts()) : $eyemich->the_post();
         $url = get_the_post_thumbnail_url();
 ?>
-        <div dir="rtl" class="bg-white h-96 overflow-hidden rounded-lg shadow-md">
+        <div dir="rtl" class="bg-white h-64 overflow-hidden rounded-lg shadow-md">
             <a href="<?php the_permalink(); ?>">
                 <img class="inset-0 w-full h-44 object-cover object-center md:object-center" src="<?php echo $url; ?>"
                     alt="<?php the_title(); ?>">
@@ -144,14 +143,6 @@
                 <h3 class="font-extrabold mb-3">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h3>
-                <p>
-                    <?php 
-            $excerpt = get_the_excerpt(); 
-            $excerpt = substr( $excerpt, 0, 280 ); // Only display first 260 characters of excerpt
-            $result = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
-            echo $result . " ...";
-            ?>
-                </p>
             </div>
         </div>
         <?php endwhile; else :
@@ -159,6 +150,76 @@
     </div>
 </div>
 
+<div class="container-xl">
+    <div class="row">
+        <div class="col-lg-6">
+
+            <div class="page-header">
+                <h2 class="title"><?php echo __( 'حصص تيليفيزيونية', 'jdsp' ); ?></h2>
+            </div>
+            <div class="">
+                <?php
+                    $args = array(
+                        'posts_per_page' => 3,
+                        'order' => 'DESC'
+                    );
+                    $eyemich = new WP_Query($args);
+                    if ($eyemich->have_posts()) :
+                        while ($eyemich->have_posts()) : $eyemich->the_post();
+                        $url = get_the_post_thumbnail_url();
+                ?>
+                <a href="<?php the_permalink(); ?>" class="flex mb-3 last:mb-0 items-center gap-2">
+                    <div class="w-2/5">
+                        <img src="<?php echo $url; ?>" class="w-full object-cover h-44 max-sm:h-28 rounded-md" alt="">
+                    </div>
+                    <div class="w-3/5">
+                        <div class="post-item-content-inner">
+                            <h4 class="title text-lg font-bold"><?php the_title(); ?></h4>
+                            <p class="text-xs"><?php the_time(); ?></p>
+                            <p class="mt-2 text-sm max-sm:hidden">
+                                <?php 
+                                $excerpt = get_the_excerpt(); 
+
+                                $excerpt = substr( $excerpt, 0, 290 ); // Only display first 260 characters of excerpt
+                                $result = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
+                                echo $result . " ...";
+                            ?>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <?php endwhile; else :
+                    echo 'خطأ'; endif; wp_reset_postdata(); ?>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="page-header">
+                <h2 class="title"><?php echo __( 'حصص تيليفيزيونية', 'jdsp' ); ?></h2>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <?php
+                    $args = array(
+                        'posts_per_page' => 4,
+                        'order' => 'DESC'
+                    );
+                    $eyemich = new WP_Query($args);
+                    if ($eyemich->have_posts()) :
+                        while ($eyemich->have_posts()) : $eyemich->the_post();
+                        $url = get_the_post_thumbnail_url();
+                ?>
+                <a href="<?php the_permalink(); ?>"
+                    class="flex opacity-80 transition-all hover:opacity-100 items-center gap-2">
+                    <div class="w-full">
+                        <img src="<?php echo $url; ?>" class="w-full object-cover h-44 max-sm:h-28 rounded-md"
+                            alt="<?php the_title(); ?>">
+                    </div>
+                </a>
+                <?php endwhile; else :
+                    echo 'خطأ'; endif; wp_reset_postdata(); ?>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container-xl">
     <div class="row">
         <div class="col-lg-6">
