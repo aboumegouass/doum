@@ -40,8 +40,53 @@
                     <li>
                         <a href="">آخر الأخبار</a>
                     </li>
-                    <li>
-                        <a href="">مواقع تهمك</a>
+                    <li class="relative z-[9999]" x-data="{ open: false }">
+                        <a @click="open = !open" href="#">مواقع تهمك</a>
+                        <div x-show="open" @click.outside="open = false"
+                            class="absolute shadow-md overflow-hidden rounded-md z-[9999] bg-white p-2 w-72">
+                            <div class="h-56 overflow-y-scroll">
+                                <ul>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://ostad.education.gov.dz/auth"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            فضاء الاساتذة
+
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="http://www.infpe.edu.dz/"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            المعهد الوطني لتكوين عمال قطاع التربية و تحسين مستواهم (INFPE)
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.inre.dz/"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            المعهد الوطني للبحث في التربية (INRE)
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="http://education.gov.dz/administrator/index.php"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مركزالتموين بالتجهيزات و الوسائل التعليمية و صيانتها (CAMEMD)
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="http://www.cndp.dz/"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            المركز الوطني للوثائق البيداغوجية (CNDP)
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="http://www.cnplet.dz/"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            المركز الوطني لادماج الابتكارات البيداغوجية و تنمية تكنلوجيات الاعلام و
+                                            الاتصال (CNIIPDTICE)
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
                     <li class="relative z-[9999]" x-data="{ open: false }">
                         <a @click="open = !open" href="#">مديريات التربية</a>
@@ -50,73 +95,156 @@
                             <div class="h-56 overflow-y-scroll">
                                 <ul>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
-                                            التربية الوطنية</a>
-                                    </li>
-                                    <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.adraredu.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية ادرار
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.de-chlef.edu.dz"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية الشلف
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.delaghouat.dz"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية الاغواط
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.educoeb04e-monsitecom"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية أم البواقي
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.de-batna-edu-dz"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية باتنة
+
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.de-biskra.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية بسكرة
+
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.de-bechar-edu-dz"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية بشار
+
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.deblida.net"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية االبليدة
+
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.de-bouira-dz"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية البويرة
+
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.etarbia11.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية تمنراست
+
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.de-tebessa.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية تبسة
+
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية تلمسان
+
                                         </a>
                                     </li>
                                     <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a href=""
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">وزارة
+                                        <a target="_blank" href="https://www.de-tiaret.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية تيارت
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.de-tiziouzou.edu.dz"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية تيزي وزو
+
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.dealgercentre.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية الجزائر وسط
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="www.de-alger-est.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لشرق ولاية الجزائر
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="www.de-alger-ouest.net"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لغرب ولاية الجزائر
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.dedjelfa.org"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية الجلفة
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.edujijel.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية جيجل
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.desetif.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية سطيف
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.desaida.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية سعيدة
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.de-skikda.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية سكيكة
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.desba.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية سيدي بلعباس
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.annabade.eb2a.com"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مديرية التربية لولاية عنابة
                                         </a>
                                     </li>
                                 </ul>

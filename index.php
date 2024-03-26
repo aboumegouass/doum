@@ -194,7 +194,7 @@
         </div>
         <div class="col-lg-6">
             <div class="page-header">
-                <h2 class="title"><?php echo __( 'حصص تيليفيزيونية', 'jdsp' ); ?></h2>
+                <h2 class="title"><?php echo __( 'بيانات النقابة', 'jdsp' ); ?></h2>
             </div>
             <div class="grid grid-cols-2 gap-4">
                 <?php
