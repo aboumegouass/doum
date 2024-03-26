@@ -436,7 +436,8 @@
                     <?php
                     $args = array(
                         'posts_per_page' => 9,
-                        'order' => 'DESC'
+                        'order' => 'DESC',
+                        'cat' => '15'
                     );
                     $eyemich = new WP_Query($args);
                     if ($eyemich->have_posts()) :

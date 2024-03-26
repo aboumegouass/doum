@@ -93,7 +93,8 @@
                     <?php
     $args = array(
         'posts_per_page' => 8,
-        'order' => 'DESC'
+        'order' => 'DESC',
+        'cat' => '5'
     );
     $eyemich = new WP_Query($args);
     if ($eyemich->have_posts()) :
@@ -127,7 +128,8 @@
         <?php
     $args = array(
         'posts_per_page' => 8,
-        'order' => 'DESC'
+        'order' => 'DESC',
+        'cat' => '12'
     );
     $eyemich = new WP_Query($args);
     if ($eyemich->have_posts()) :
@@ -161,7 +163,8 @@
                 <?php
                     $args = array(
                         'posts_per_page' => 3,
-                        'order' => 'DESC'
+                        'order' => 'DESC',
+                        'cat' => '11'
                     );
                     $eyemich = new WP_Query($args);
                     if ($eyemich->have_posts()) :
@@ -200,7 +203,8 @@
                 <?php
                     $args = array(
                         'posts_per_page' => 4,
-                        'order' => 'DESC'
+                        'order' => 'DESC',
+                        'cat' => '13'
                     );
                     $eyemich = new WP_Query($args);
                     if ($eyemich->have_posts()) :
@@ -230,7 +234,8 @@
                 <?php
                     $args = array(
                         'posts_per_page' => 4,
-                        'order' => 'DESC'
+                        'order' => 'DESC',
+                        'cat' => '3'
                     );
                     $eyemich = new WP_Query($args);
                     if ($eyemich->have_posts()) :
@@ -262,7 +267,8 @@
                 <?php
                     $args = array(
                         'posts_per_page' => 4,
-                        'order' => 'DESC'
+                        'order' => 'DESC',
+                        'cat' => '2'
                     );
                     $eyemich = new WP_Query($args);
                     if ($eyemich->have_posts()) :
@@ -332,7 +338,8 @@
                 <?php
                     $args = array(
                         'posts_per_page' => 9,
-                        'order' => 'DESC'
+                        'order' => 'DESC',
+                        'cat' => '14'
                     );
                     $eyemich = new WP_Query($args);
                     if ($eyemich->have_posts()) :
