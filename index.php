@@ -120,7 +120,7 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container-xl bg-white p-3">
     <div class="mb-2 pb-4 border-b border-b-slate-200">
         <h3 class="text-2xl font-extrabold">تعازي</h3>
     </div>
@@ -152,79 +152,7 @@
     </div>
 </div>
 
-<div class="container-xl">
-    <div class="row">
-        <div class="col-lg-6">
-
-            <div class="page-header">
-                <h2 class="title"><?php echo __( 'حصص تيليفيزيونية', 'jdsp' ); ?></h2>
-            </div>
-            <div class="">
-                <?php
-                    $args = array(
-                        'posts_per_page' => 3,
-                        'order' => 'DESC',
-                        'cat' => '11'
-                    );
-                    $eyemich = new WP_Query($args);
-                    if ($eyemich->have_posts()) :
-                        while ($eyemich->have_posts()) : $eyemich->the_post();
-                        $url = get_the_post_thumbnail_url();
-                ?>
-                <a href="<?php the_permalink(); ?>" class="flex mb-3 last:mb-0 items-center gap-2">
-                    <div class="w-2/5">
-                        <img src="<?php echo $url; ?>" class="w-full object-cover h-44 max-sm:h-28 rounded-md" alt="">
-                    </div>
-                    <div class="w-3/5">
-                        <div class="post-item-content-inner">
-                            <h4 class="title text-lg font-bold"><?php the_title(); ?></h4>
-                            <p class="text-xs"><?php the_time(); ?></p>
-                            <p class="mt-2 text-sm max-sm:hidden">
-                                <?php 
-                                $excerpt = get_the_excerpt(); 
-
-                                $excerpt = substr( $excerpt, 0, 290 ); // Only display first 260 characters of excerpt
-                                $result = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
-                                echo $result . " ...";
-                            ?>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <?php endwhile; else :
-                    echo 'خطأ'; endif; wp_reset_postdata(); ?>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="page-header">
-                <h2 class="title"><?php echo __( 'بيانات النقابة', 'jdsp' ); ?></h2>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <?php
-                    $args = array(
-                        'posts_per_page' => 4,
-                        'order' => 'DESC',
-                        'cat' => '13'
-                    );
-                    $eyemich = new WP_Query($args);
-                    if ($eyemich->have_posts()) :
-                        while ($eyemich->have_posts()) : $eyemich->the_post();
-                        $url = get_the_post_thumbnail_url();
-                ?>
-                <a href="<?php the_permalink(); ?>"
-                    class="flex opacity-80 transition-all hover:opacity-100 items-center gap-2">
-                    <div class="w-full">
-                        <img src="<?php echo $url; ?>" class="w-full object-cover h-44 max-sm:h-28 rounded-md"
-                            alt="<?php the_title(); ?>">
-                    </div>
-                </a>
-                <?php endwhile; else :
-                    echo 'خطأ'; endif; wp_reset_postdata(); ?>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container-xl">
+<div class="container-xl bg-white p-3">
     <div class="row">
         <div class="col-lg-6">
             <div class="page-header">
@@ -257,9 +185,9 @@
                 <?php endwhile; else :
                     echo 'خطأ'; endif; wp_reset_postdata(); ?>
             </div>
-            <?php echo do_shortcode( '[contact_form]' ); ?>
+
         </div>
-        <div class="col-lg-6">
+        <div class="w-1/2 max-sm:w-full">
             <div class="page-header">
                 <h2 class="title"><?php echo __( 'أنشطة المكتب الوطني', 'jdsp' ); ?></h2>
             </div>
@@ -306,6 +234,76 @@
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<div class="container-xl bg-white p-3">
+    <div class="flex gap-3 my-3 max-sm:flex-col-reverse">
+        <div class="w-2/3 max-sm:w-full">
+
+            <div class="page-header">
+                <h2 class="title"><?php echo __( 'حصص تيليفيزيونية', 'jdsp' ); ?></h2>
+            </div>
+            <div class="">
+                <?php
+                    $args = array(
+                        'posts_per_page' => 3,
+                        'order' => 'DESC',
+                        'cat' => '11'
+                    );
+                    $eyemich = new WP_Query($args);
+                    if ($eyemich->have_posts()) :
+                        while ($eyemich->have_posts()) : $eyemich->the_post();
+                        $url = get_the_post_thumbnail_url();
+                ?>
+                <a href="<?php the_permalink(); ?>" class="flex mb-3 last:mb-0 items-center gap-2">
+                    <div class="w-2/5">
+                        <img src="<?php echo $url; ?>" class="w-full object-cover h-44 max-sm:h-28 rounded-md" alt="">
+                    </div>
+                    <div class="w-3/5">
+                        <div class="post-item-content-inner">
+                            <h4 class="title text-lg font-bold"><?php the_title(); ?></h4>
+                            <p class="text-xs"><?php the_time(); ?></p>
+                            <p class="mt-2 text-sm max-sm:hidden">
+                                <?php 
+                                $excerpt = get_the_excerpt(); 
+
+                                $excerpt = substr( $excerpt, 0, 290 ); // Only display first 260 characters of excerpt
+                                $result = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
+                                echo $result . " ...";
+                            ?>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <?php endwhile; else :
+                    echo 'خطأ'; endif; wp_reset_postdata(); ?>
+            </div>
+        </div>
+        <div class="w-1/3 max-sm:w-full">
+            <div class="page-header">
+                <h2 class="title"><?php echo __( 'بيانات النقابة', 'jdsp' ); ?></h2>
+            </div>
+            <?php
+                    $args = array(
+                        'posts_per_page' => 1,
+                        'order' => 'DESC',
+                        'cat' => '13'
+                    );
+                    $eyemich = new WP_Query($args);
+                    if ($eyemich->have_posts()) :
+                        while ($eyemich->have_posts()) : $eyemich->the_post();
+                        $url = get_the_post_thumbnail_url();
+                ?>
+            <a href="<?php the_permalink(); ?>"
+                class="flex opacity-80 transition-all hover:opacity-100 items-center gap-2">
+                <div class="w-full">
+                    <img src="<?php echo $url; ?>" class="w-full object-cover h-72 max-sm:h-64 rounded-md"
+                        alt="<?php the_title(); ?>">
+                </div>
+            </a>
+            <?php endwhile; else :
+                    echo 'خطأ'; endif; wp_reset_postdata(); ?>
         </div>
     </div>
 </div>
@@ -360,8 +358,6 @@
             </div>
         </div>
     </div>
-
-
     <!-- <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
@@ -384,5 +380,8 @@
             </dl>
         </div>
     </div> -->
+</div>
+<div class="container-xl bg-white p-3 my-3">
+    <?php echo do_shortcode( '[contact_form]' ); ?>
 </div>
 <?php get_footer(); ?>
