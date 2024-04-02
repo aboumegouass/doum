@@ -106,6 +106,7 @@
 
 
 <?php wp_footer(); ?>
+<script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/breaking-news-ticker.min.js"></script>
 </body>
 
 </html>

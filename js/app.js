@@ -1,162 +1,101 @@
-(function ($) {
-  $.simpleTicker = function (element, options) {
-    var defaults = {
-      speed: 500,
-      delay: 4000,
-      easing: "swing",
-      effectType: "fade",
-    };
-    var param = {
-      ul: "",
-      li: "",
-      initList: "",
-      ulWidth: "",
-      liHeight: "",
-      tickerHook: "tickerHook",
-      effect: {},
-    };
+jQuery(document).ready(function ($) {
+  $("#newsTicker1").breakingNews();
+  //$('#newsTicker2').data('breakingNews').next();
 
-    var plugin = this;
-    plugin.settings = {};
-    var $element = $(element),
-      element = element;
+  $("#newsTicker2").breakingNews({
+    direction: "rtl",
+  });
 
-    plugin.init = function () {
-      plugin.settings = $.extend({}, defaults, options);
-      param.ul = element.children("ul");
-      param.li = element.find("li");
-      param.initList = element.find("li:first");
-      param.ulWidth = param.ul.width();
-      param.liHeight = param.li.height();
+  $("#newsTicker3").breakingNews({
+    themeColor: "#f9a828",
+    effect: "slide-left",
+  });
 
-      element.css({ height: param.liHeight });
-      param.li.css({ top: "0", left: "0", position: "absolute" });
+  $("#newsTicker4").breakingNews({
+    themeColor: "#11cbd7",
+    source: {
+      type: "rss",
+      usingApi: "rss2json",
+      rss2jsonApiKey: "02nuttg6qloiouhhvh4wg40oykk710khiy74nxwq",
+      url: "https://a7rarpress.blogspot.com/feeds/posts/default?alt=rss",
+      limit: 7,
+      showingField: "title",
+      linkEnabled: true,
+      target: "_blank",
+      seperator:
+        '<span class="bn-seperator" style="background-image:url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5Nm3hEdfbFa5CVyDk2q5w2FnVR94Ut9Ge4X38-l0JdtxjcZKDCz0_9xPWErTbho_VKrVIL7JAJcTgu3jqRdw38gR_avDeNYGEoXiUxJg8J4CnNq9hFiYI03lZnn-nHMaUl9u_Bcj29YonyQrPCkGVGsUmrjqFDFPhbAINKtx6iztC2jXb25EuDyafoKs/s1600/logerstampp.png);"></span>',
+      errorMsg: "RSS Feed not loaded. Please try again.",
+    },
+  });
 
-      switch (plugin.settings.effectType) {
-        case "fade":
-          plugin.effect.fade();
-          break;
-        case "roll":
-          plugin.effect.roll();
-          break;
-        case "slide":
-          plugin.effect.slide();
-          break;
-      }
-      plugin.effect.exec();
-    };
+  $("#newsTicker5").breakingNews({
+    effect: "typography",
+  });
 
-    plugin.effect = {};
-    plugin.effect.exec = function () {
-      param.initList
-        .css(param.effect.init.css)
-        .animate(
-          param.effect.init.animate,
-          plugin.settings.speed,
-          plugin.settings.easing
-        )
-        .addClass(param.tickerHook);
-      setInterval(function () {
-        element
-          .find("." + param.tickerHook)
-          .animate(
-            param.effect.start.animate,
-            plugin.settings.speed,
-            plugin.settings.easing
-          )
-          .next()
-          .css(param.effect.next.css)
-          .animate(
-            param.effect.next.animate,
-            plugin.settings.speed,
-            plugin.settings.easing
-          )
-          .addClass(param.tickerHook)
-          .end()
-          .appendTo(param.ul)
-          .css(param.effect.end.css)
-          .removeClass(param.tickerHook);
-      }, plugin.settings.delay);
-    };
+  $("#newsTicker6").breakingNews({
+    source: {
+      type: "json",
+      url: "https://jsonplaceholder.typicode.com/posts",
+      limit: 20,
+      showingField: "title",
+      linkEnabled: false,
+      target: "_blank",
+      seperator:
+        '<span class="bn-seperator" style="background-image:url(img/cnn-logo.png);"></span>',
+      errorMsg: "Json file not loaded. Please check the settings.",
+    },
+  });
 
-    plugin.effect.fade = function () {
-      param.effect = {
-        init: {
-          css: { display: "block", opacity: "0" },
-          animate: { opacity: "1", zIndex: "98" },
-        },
-        start: {
-          animate: { opacity: "0" },
-        },
-        next: {
-          css: { display: "block", opacity: "0", zIndex: "99" },
-          animate: { opacity: "1" },
-        },
-        end: {
-          css: { display: "none", zIndex: "98" },
-        },
-      };
-    };
+  $("#newsTicker9").breakingNews({
+    effect: "fade",
+    themeColor: "#ef7b7b",
+  });
 
-    plugin.effect.roll = function () {
-      param.effect = {
-        init: {
-          css: { top: "3em", display: "block", opacity: "0" },
-          animate: { top: "0", opacity: "1", zIndex: "98" },
-        },
-        start: {
-          animate: { top: "-3em", opacity: "0" },
-        },
-        next: {
-          css: { top: "3em", display: "block", opacity: "0", zIndex: "99" },
-          animate: { top: "0", opacity: "1" },
-        },
-        end: {
-          css: { zIndex: "98" },
-        },
-      };
-    };
+  $("#newsTicker10").breakingNews({
+    effect: "slide-down",
+    themeColor: "#2eb872",
+    height: 50,
+    fontSize: "18px",
+  });
 
-    plugin.effect.slide = function () {
-      param.effect = {
-        init: {
-          css: { left: 200, display: "block", opacity: "0" },
-          animate: { left: "0", opacity: "1", zIndex: "98" },
-        },
-        start: {
-          animate: { left: -200, opacity: "0" },
-        },
-        next: {
-          css: {
-            left: param.ulWidth,
-            display: "block",
-            opacity: "0",
-            zIndex: "99",
-          },
-          animate: { left: "0", opacity: "1" },
-        },
-        end: {
-          css: { zIndex: "98" },
-        },
-      };
-    };
+  $("#newsTicker11").breakingNews({
+    effect: "slide-up",
+  });
 
-    plugin.init();
-  };
+  $("#newsTicker12").breakingNews({
+    effect: "typography",
+    direction: "rtl",
+    themeColor: "#08c299",
+  });
 
-  $.fn.simpleTicker = function (options) {
-    return this.each(function () {
-      if (undefined == $(this).data("simpleTicker")) {
-        var plugin = new $.simpleTiecker(this, options);
-        $(this).data("simpleTicker", plugin);
-      }
-    });
-  };
-})(jQuery);
+  $("#newsTicker13").breakingNews({
+    effect: "slide-right",
+  });
 
-$(function () {
-  $.simpleTicker($("#js-ticker-roll"), { effectType: "roll" });
+  $("#newsTicker14").breakingNews();
+
+  $("#newsTicker15").breakingNews({
+    position: "fixed-bottom",
+    borderWidth: 3,
+    height: 50,
+    themeColor: "#ce2525",
+  });
 });
+var _gaq = _gaq || [];
+_gaq.push(["_setAccount", "UA-36251023-1"]);
+_gaq.push(["_setDomainName", "jqueryscript.net"]);
+_gaq.push(["_trackPageview"]);
+
+(function () {
+  var ga = document.createElement("script");
+  ga.type = "text/javascript";
+  ga.async = true;
+  ga.src =
+    ("https:" == document.location.protocol ? "https://ssl" : "http://www") +
+    ".google-analytics.com/ga.js";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(ga, s);
+})();
 
 // Carousel
 $(".posts-carousel").slick({

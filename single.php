@@ -4,7 +4,7 @@ $url = get_the_post_thumbnail_url();
 $id = get_the_ID();
 ?>
 <div class="snapep-single-content">
-    <div class="container">
+    <div class="container bg-white/90 p-3">
         <div class="row">
             <div class="col-md-4">
                 <div class="snapep-single-thumbnail" style="background-image: url('<?php echo $url; ?>');"></div>

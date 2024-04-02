@@ -19,14 +19,17 @@
         <?php bloginfo('name'); ?> |
         <?php is_front_page() ? bloginfo('description') : wp_title(''); ?>
     </title>
-    <link rel="icon" href="<?php echo get_template_directory_uri() . '/img/fav.png'; ?>">
+    <link rel="icon" href="<?php echo get_template_directory_uri() . '/img/logo.jpg'; ?>">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <?php wp_head(); ?>
     <script src="https://kit.fontawesome.com/8012fece80.js" crossorigin="anonymous"></script>
-
+    <link href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/jquerysctipttop.css" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/breaking-news-ticker.css">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
@@ -40,56 +43,75 @@
         <div class="flex p-2 justify-between max-sm:justify-center items-center">
             <div class="">
                 <ul class="flex items-center gap-3">
-                    <li>
-                        <a href="">آخر الأخبار</a>
-                    </li>
-                    <li class="relative z-[9999]" x-data="{ open: false }">
-                        <a @click="open = !open" href="#">مواقع تهمك</a>
-                        <div x-show="open" @click.outside="open = false"
-                            class="absolute shadow-md overflow-hidden rounded-md z-[9999] bg-white p-2 w-72">
-                            <div class="h-56 overflow-y-scroll">
-                                <ul>
-                                    <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a target="_blank" href="https://ostad.education.gov.dz/auth"
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
-                                            فضاء الاساتذة
 
-                                        </a>
-                                    </li>
-                                    <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a target="_blank" href="http://www.infpe.edu.dz/"
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
-                                            المعهد الوطني لتكوين عمال قطاع التربية و تحسين مستواهم (INFPE)
-                                        </a>
-                                    </li>
-                                    <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a target="_blank" href="https://www.inre.dz/"
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
-                                            المعهد الوطني للبحث في التربية (INRE)
-                                        </a>
-                                    </li>
-                                    <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a target="_blank" href="http://education.gov.dz/administrator/index.php"
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
-                                            مركزالتموين بالتجهيزات و الوسائل التعليمية و صيانتها (CAMEMD)
-                                        </a>
-                                    </li>
-                                    <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a target="_blank" href="http://www.cndp.dz/"
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
-                                            المركز الوطني للوثائق البيداغوجية (CNDP)
-                                        </a>
-                                    </li>
-                                    <li class="border-b last:border-b-0 border-b-slate-100">
-                                        <a target="_blank" href="http://www.cnplet.dz/"
-                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
-                                            المركز الوطني لادماج الابتكارات البيداغوجية و تنمية تكنلوجيات الاعلام و
-                                            الاتصال (CNIIPDTICE)
-                                        </a>
-                                    </li>
-                                </ul>
+                    <li class="max-sm:z-[9999]" x-data="{ open: false }">
+                        <button @click="open = !open" type="button"
+                            class="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
+                            aria-expanded="false">
+                            <img class="w-5" src="<?php echo get_template_directory_uri() . '/img/logo.jpg'; ?>" alt="">
+                            <span>بيتي SNAPEP</span>
+                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div x-show="open" @click.outside="open = false"
+                            class="absolute left-1/2 max-sm:rtl:right-0 max-sm:rtl:left-0 max-sm:left-0 max-sm:right-0 max-sm:rtl:z-[9999] rtl:right-1/2 rtl:left-auto z-50 mt-2 flex px-4">
+                            <div
+                                class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+                                <div class="p-4">
+                                    <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                                        <div
+                                            class="mt-1 shadow-lg flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                            <img class="h-8 w-8 text-gray-600 group-hover:text-indigo-600"
+                                                src="<?php echo get_template_directory_uri() . '/img/join.png'; ?>">
+                                        </div>
+                                        <div>
+                                            <a href="#" class="font-bold text-lg text-gray-900">
+                                                انخرط معنا
+                                                <span class="absolute inset-0"></span>
+                                            </a>
+                                            <p class="text-gray-700">هذا النص هو مثال لنص يمكن استبداله
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                                        <div
+                                            class="mt-1 shadow-lg flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                            <img class="h-8 w-8 text-gray-600 group-hover:text-indigo-600"
+                                                src="<?php echo get_template_directory_uri() . '/img/koran_.png'; ?>">
+                                        </div>
+                                        <div>
+                                            <a href="#" class="font-bold text-lg text-gray-900">
+                                                شموع المعرفة
+                                                <span class="absolute inset-0"></span>
+                                            </a>
+                                            <p class="text-gray-700">هذا النص هو مثال لنص يمكن استبداله
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                                        <div
+                                            class="mt-1 shadow-lg flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                            <img class="h-8 w-8 text-gray-600 group-hover:text-indigo-600"
+                                                src="<?php echo get_template_directory_uri() . '/img/blood.png'; ?>">
+                                        </div>
+                                        <div>
+                                            <a href="#" class="font-bold text-lg text-gray-900">
+                                                قطرة حياة
+                                                <span class="absolute inset-0"></span>
+                                            </a>
+                                            <p class="text-gray-700">هذا النص هو مثال لنص يمكن استبداله
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://ostad.education.gov.dz/auth">فضاء الأستاذ</a>
                     </li>
                     <li class="relative z-[9999]" x-data="{ open: false }">
                         <a @click="open = !open" href="#">مديريات التربية</a>
@@ -254,71 +276,56 @@
                             </div>
                         </div>
                     </li>
-                    <li class="max-sm:z-[9999]" x-data="{ open: false }">
-                        <button @click="open = !open" type="button"
-                            class="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
-                            aria-expanded="false">
-                            <img class="w-5" src="<?php echo get_template_directory_uri() . '/img/logo.jpg'; ?>" alt="">
-                            <span>بيتي SNAPEP</span>
-                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </button>
+                    <li class="relative z-[9999]" x-data="{ open: false }">
+                        <a @click="open = !open" href="#">مواقع تهمك</a>
                         <div x-show="open" @click.outside="open = false"
-                            class="absolute left-1/2 max-sm:rtl:right-0 max-sm:rtl:left-0 max-sm:left-0 max-sm:right-0 max-sm:rtl:z-[9999] rtl:right-1/2 rtl:left-auto z-50 mt-2 flex px-4">
-                            <div
-                                class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
-                                <div class="p-4">
-                                    <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
-                                        <div
-                                            class="mt-1 shadow-lg flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                            <img class="h-8 w-8 text-gray-600 group-hover:text-indigo-600"
-                                                src="<?php echo get_template_directory_uri() . '/img/blood.png'; ?>">
-                                        </div>
-                                        <div>
-                                            <a href="#" class="font-bold text-lg text-gray-900">
-                                                قطرة حياة
-                                                <span class="absolute inset-0"></span>
-                                            </a>
-                                            <p class="text-gray-700">هذا النص هو مثال لنص يمكن استبداله
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
-                                        <div
-                                            class="mt-1 shadow-lg flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                            <img class="h-8 w-8 text-gray-600 group-hover:text-indigo-600"
-                                                src="<?php echo get_template_directory_uri() . '/img/koran_.png'; ?>">
-                                        </div>
-                                        <div>
-                                            <a href="#" class="font-bold text-lg text-gray-900">
-                                                شموع المعرفة
-                                                <span class="absolute inset-0"></span>
-                                            </a>
-                                            <p class="text-gray-700">هذا النص هو مثال لنص يمكن استبداله
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
-                                        <div
-                                            class="mt-1 shadow-lg flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                            <img class="h-8 w-8 text-gray-600 group-hover:text-indigo-600"
-                                                src="<?php echo get_template_directory_uri() . '/img/join.png'; ?>">
-                                        </div>
-                                        <div>
-                                            <a href="#" class="font-bold text-lg text-gray-900">
-                                                انخرط معنا
-                                                <span class="absolute inset-0"></span>
-                                            </a>
-                                            <p class="text-gray-700">هذا النص هو مثال لنص يمكن استبداله
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                            class="absolute shadow-md overflow-hidden rounded-md z-[9999] bg-white p-2 w-72">
+                            <div class="h-56 overflow-y-scroll">
+                                <ul>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://ostad.education.gov.dz/auth"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            فضاء الاساتذة
+
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="http://www.infpe.edu.dz/"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            المعهد الوطني لتكوين عمال قطاع التربية و تحسين مستواهم (INFPE)
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="https://www.inre.dz/"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            المعهد الوطني للبحث في التربية (INRE)
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="http://education.gov.dz/administrator/index.php"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            مركزالتموين بالتجهيزات و الوسائل التعليمية و صيانتها (CAMEMD)
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="http://www.cndp.dz/"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            المركز الوطني للوثائق البيداغوجية (CNDP)
+                                        </a>
+                                    </li>
+                                    <li class="border-b last:border-b-0 border-b-slate-100">
+                                        <a target="_blank" href="http://www.cnplet.dz/"
+                                            class="p-2 hover:bg-slate-100 hover:opacity-100 opacity-80 flex w-full">
+                                            المركز الوطني لادماج الابتكارات البيداغوجية و تنمية تكنلوجيات الاعلام و
+                                            الاتصال (CNIIPDTICE)
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+                    </li>
+                    <li>
+                        <a href="">آخر الأخبار</a>
                     </li>
                 </ul>
             </div>
@@ -411,25 +418,14 @@
     </div>
     <?php } ?>
     <div class="container">
-        <div class="flex items-center">
+        <div class="breaking-news-ticker relative" id="newsTicker2">
             <div
-                class="bg-slate-900/30 font-bold rounded-s-lg flex items-center justify-center h-14 max-sm:h-10 overflow-hidden w-36 max-sm:w-16">
-                <span class="max-sm:hidden">
-                    شريط العاجل
-                </span>
-                <span class="hidden max-sm:flex">
-                    <i class="fa fa-rss"></i>
-                </span>
+                class="bn-label after:absolute after:left-0 after:right-0 after:bottom-0 after:top-0 after:bg-transparent after:border-2 after:border-red-500 after:animate-pulse after:content-[''] ">
+                شريط العاجل
+                <span class="animate-ping w-2 h-2 absolute inline-flex rounded-full bg-red-200 left-2 top-2"></span>
             </div>
-            <div class="ticker-wrap flex items-center h-14 max-sm:h-10 overflow-hidden w-[calc(100%-144px)] max-sm:w-[calc(100%-64px)] bg-white/60 border border-slate-900/50 shadow-lg rounded-s-lg relative isolate"
-                dir="ltr">
-                <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-                    aria-hidden="true">
-                    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-                        style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-                    </div>
-                </div>
-                <div class="ticker">
+            <div class="bn-news">
+                <ul>
                     <?php
                     $args = array(
                         'posts_per_page' => 9,
@@ -441,15 +437,18 @@
                         while ($eyemich->have_posts()) : $eyemich->the_post();
                         $url = get_the_post_thumbnail_url();
                 ?>
-                    <div class="ticker__item">
-                        <a href="<?php the_permalink(); ?>"
-                            class="opacity-70 hover:opacity-100 transition-all duration-200">
-                            <?php the_title(); ?>
-                        </a>
-                    </div>
+                    <li>
+                        <a class="font-semibold text-lg" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </li>
+
                     <?php endwhile; else :
                     echo 'خطأ'; endif; wp_reset_postdata(); ?>
-                </div>
+                </ul>
+            </div>
+            <div class="bn-controls">
+                <button><span class="bn-arrow bn-prev"></span></button>
+                <button><span class="bn-action"></span></button>
+                <button><span class="bn-arrow bn-next"></span></button>
             </div>
         </div>
     </div>
