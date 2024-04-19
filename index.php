@@ -129,7 +129,7 @@
                     $args = array(
                         'posts_per_page' => 4,
                         'order' => 'DESC',
-                        //'cat' => '2'
+                        'cat' => '2'
                     );
                     $eyemich = new WP_Query($args);
                     if ($eyemich->have_posts()) :
