@@ -1,5 +1,54 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
+
+<div x-data="{ open: true }">
+
+    <?php
+    $args = array(
+        'posts_per_page' => 1,
+        'order' => 'DESC',
+        'cat' => '23'
+    );
+    $eyemich = new WP_Query($args);
+    if ($eyemich->have_posts()) :
+        while ($eyemich->have_posts()) : $eyemich->the_post();
+        $url = get_the_post_thumbnail_url();
+        ?>
+    <div x-show="open"
+        class="bg-red-100 p-6 transition-all duration-200 after:animate-ping after:absolute after:bg-red-600 after:h-3 after:left-0 after:right-0 after:top-0 after:z-40 before:absolute before:bg-red-700 before:h-3 before:left-0 before:right-0 before:top-0 before:z-40 fixed z-[9000] bottom-0 left-0 right-0">
+        <button
+            class="flex w-10 h-10 text-lg z-50 items-center font-bold justify-center bg-red-600 text-white right-10 rounded-full absolute -top-6"
+            @click="open = false">
+            <i class="fa fa-close"></i>
+        </button>
+        <div class="max-w-5xl mx-auto">
+            <a href="<?php the_permalink(); ?>" class="flex gap-4">
+                <div class="w-60">
+                    <img src="<?php echo $url; ?>" class="object-cover rounded-md w-full h-40" alt="">
+                </div>
+                <div class="w-[calc(100%-240px)]">
+                    <p
+                        class="w-36 animate-pulse mb-3 bg-red-500 rounded-md text-white font-bold px-3 py-1.5 text-center">
+                        خبر عاجل</p>
+                    <h3 class="text-lg font-extrabold"><?php the_title(); ?></h3>
+                    <p class="mt-2 text-base">
+                        <?php 
+                    $excerpt = get_the_excerpt(); 
+                    $excerpt = substr( $excerpt, 0, 320 ); // Only display first 260 characters of excerpt
+                    $result = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
+                    echo $result . " ...";
+                    ?>
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <?php endwhile; else :
+echo 'خطأ'; endif; wp_reset_postdata(); ?>
+
+</div>
+
 <?php $bg = get_template_directory_uri() . '/img/footer.png'; ?>
 <div class="najd-footer">
     <?php $whatsappNumber = get_option('whatsappNumber'); ?>

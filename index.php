@@ -121,8 +121,8 @@
     </div>
 </div>
 <div class="container-xl bg-white p-3">
-    <div class="page-header">
-        <h2 class="title"><?php echo __( 'أنشطة المكتب الوطني', 'jdsp' ); ?></h2>
+    <div class="page-header border-b-orange-700">
+        <h2 class="title bg-orange-700"><?php echo __( 'أنشطة المكتب الوطني', 'jdsp' ); ?></h2>
     </div>
     <div class="row">
         <?php
@@ -137,7 +137,6 @@
                         $url = get_the_post_thumbnail_url();
                 ?>
         <div class="col-sm-6">
-
             <a href="<?php the_permalink(); ?>" class="flex mb-3 last:mb-0 items-center gap-2">
                 <div class="w-2/5">
                     <img src="<?php echo $url; ?>" class="w-full object-cover h-44 max-sm:h-28 rounded-md" alt="">
@@ -162,8 +161,8 @@
         <?php endwhile; else :
                     echo 'خطأ'; endif; wp_reset_postdata(); ?>
     </div>
-    <div class="page-header">
-        <h2 class="title"><?php echo __( 'أنشطة المكاتب الولائية', 'jdsp' ); ?></h2>
+    <div class="page-header border-b-neutral-600">
+        <h2 class="title bg-neutral-600"><?php echo __( 'أنشطة المكاتب الولائية', 'jdsp' ); ?></h2>
     </div>
     <div class="row">
         <?php
@@ -199,8 +198,8 @@
 
 
 
-    <div class="page-header">
-        <h2 class="title"><?php echo __( 'أخبار تربوية', 'jdsp' ); ?></h2>
+    <div class="page-header border-b-amber-600">
+        <h2 class="title bg-amber-600"><?php echo __( 'أخبار تربوية', 'jdsp' ); ?></h2>
     </div>
     <div class="row">
         <?php
@@ -242,21 +241,15 @@
     </div>
 
 
-
-
-
-
-
-
-    <div class="page-header">
-        <h2 class="title"><?php echo __( 'ملتقيات والمجالس الوطنية', 'jdsp' ); ?></h2>
+    <div class="page-header border-b-teal-700">
+        <h2 class="title bg-teal-700"><?php echo __( 'صحف ومقالات', 'jdsp' ); ?></h2>
     </div>
     <div class="row">
         <?php
                     $args = array(
                         'posts_per_page' => 4,
                         'order' => 'DESC',
-                        'cat' => '21'
+                        'cat' => '22'
                     );
                     $eyemich = new WP_Query($args);
                     if ($eyemich->have_posts()) :
@@ -281,10 +274,69 @@
 
 
 
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="page-header border-b-violet-700">
+                <h2 class="title bg-violet-700"><?php echo __( 'حصص تيليفيزيونية', 'jdsp' ); ?></h2>
+            </div>
+            <div class="">
+                <?php
+                    $args = array(
+                        'posts_per_page' => 3,
+                        'order' => 'DESC',
+                        'cat' => '11'
+                    );
+                    $eyemich = new WP_Query($args);
+                    if ($eyemich->have_posts()) :
+                        while ($eyemich->have_posts()) : $eyemich->the_post();
+                        $url = get_the_post_thumbnail_url();
+                ?>
+                <a href="<?php the_permalink(); ?>" class="flex mb-3 last:mb-0 items-center gap-2">
+                    <div class="w-2/5">
+                        <img src="<?php echo $url; ?>" class="w-full object-cover h-44 max-sm:h-28 rounded-md" alt="">
+                    </div>
+                    <div class="w-3/5">
+                        <div class="post-item-content-inner">
+                            <h4 class="title text-lg font-bold"><?php the_title(); ?></h4>
+                            <p class="text-xs"><?php the_time(); ?></p>
+                            <p class="mt-2 text-sm max-sm:hidden">
+                                <?php 
+                                $excerpt = get_the_excerpt(); 
+
+                                $excerpt = substr( $excerpt, 0, 290 ); // Only display first 260 characters of excerpt
+                                $result = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
+                                echo $result . " ...";
+                            ?>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <?php endwhile; else :
+                    echo 'خطأ'; endif; wp_reset_postdata(); ?>
+            </div>
+        </div>
+        <div class="w-1/2 max-sm:w-full">
+            <div class="page-header border-b-pink-900">
+                <h2 class="title bg-pink-900"><?php echo __( 'فيديو النقابة', 'jdsp' ); ?></h2>
+            </div>
+            <?php $videoLink = get_option('videoLink'); ?>
+            <iframe class="w-full rounded-md h-64 mb-6" src="https://www.youtube.com/embed/<?php echo $videoLink; ?>"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
 
 
-    <div class="page-header">
-        <h2 class="title"><?php echo __( 'مواقف ومطالب', 'jdsp' ); ?></h2>
+
+
+
+
+
+
+
+    <div class="page-header border-b-red-800">
+        <h2 class="title bg-red-800"><?php echo __( 'مواقف ومطالب', 'jdsp' ); ?></h2>
     </div>
     <div class="row">
         <?php
@@ -333,15 +385,15 @@
 
 
 
-    <div class="page-header">
-        <h2 class="title"><?php echo __( 'صحف ومقالات', 'jdsp' ); ?></h2>
+    <div class="page-header border-b-green-600">
+        <h2 class="title bg-green-600"><?php echo __( 'الملتقيات والمجالس الوطنية', 'jdsp' ); ?></h2>
     </div>
     <div class="row">
         <?php
                     $args = array(
                         'posts_per_page' => 4,
                         'order' => 'DESC',
-                        'cat' => '22'
+                        'cat' => '21'
                     );
                     $eyemich = new WP_Query($args);
                     if ($eyemich->have_posts()) :
@@ -365,65 +417,6 @@
     </div>
 
 
-
-
-
-
-
-
-
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="page-header">
-                <h2 class="title"><?php echo __( 'حصص تيليفيزيونية', 'jdsp' ); ?></h2>
-            </div>
-            <div class="">
-                <?php
-                    $args = array(
-                        'posts_per_page' => 3,
-                        'order' => 'DESC',
-                        'cat' => '11'
-                    );
-                    $eyemich = new WP_Query($args);
-                    if ($eyemich->have_posts()) :
-                        while ($eyemich->have_posts()) : $eyemich->the_post();
-                        $url = get_the_post_thumbnail_url();
-                ?>
-                <a href="<?php the_permalink(); ?>" class="flex mb-3 last:mb-0 items-center gap-2">
-                    <div class="w-2/5">
-                        <img src="<?php echo $url; ?>" class="w-full object-cover h-44 max-sm:h-28 rounded-md" alt="">
-                    </div>
-                    <div class="w-3/5">
-                        <div class="post-item-content-inner">
-                            <h4 class="title text-lg font-bold"><?php the_title(); ?></h4>
-                            <p class="text-xs"><?php the_time(); ?></p>
-                            <p class="mt-2 text-sm max-sm:hidden">
-                                <?php 
-                                $excerpt = get_the_excerpt(); 
-
-                                $excerpt = substr( $excerpt, 0, 290 ); // Only display first 260 characters of excerpt
-                                $result = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
-                                echo $result . " ...";
-                            ?>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <?php endwhile; else :
-                    echo 'خطأ'; endif; wp_reset_postdata(); ?>
-            </div>
-        </div>
-        <div class="w-1/2 max-sm:w-full">
-            <div class="page-header">
-                <h2 class="title"><?php echo __( 'فيديو النقابة', 'jdsp' ); ?></h2>
-            </div>
-            <?php $videoLink = get_option('videoLink'); ?>
-            <iframe class="w-full rounded-md h-64 mb-6" src="https://www.youtube.com/embed/<?php echo $videoLink; ?>"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-        </div>
-    </div>
 </div>
 <div class="container-xl bg-white p-3">
     <div class="flex gap-3 my-3 max-sm:flex-col-reverse">
@@ -459,8 +452,8 @@
             </div>
         </div>
         <div class="w-1/3 max-sm:w-full">
-            <div class="page-header">
-                <h2 class="title"><?php echo __( 'بيانات النقابة', 'jdsp' ); ?></h2>
+            <div class="page-header border-b-blue-700">
+                <h2 class="title bg-blue-700"><?php echo __( 'بيانات النقابة', 'jdsp' ); ?></h2>
             </div>
             <?php
                     $args = array(
